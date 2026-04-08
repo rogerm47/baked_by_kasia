@@ -70,14 +70,16 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-purple selection:text-charcoal">
+<body class="font-sans antialiased selection:bg-purple selection:text-charcoal relative">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-500 py-4 md:py-6" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex items-center -ml-4">
-                <img src="logo.jpg" id="brand-logo" alt="Baked by Kasia Logo" class="h-48 md:h-56 w-auto object-contain mix-blend-multiply transition-all duration-500 hover:scale-105">
+            <a href="#" class="flex items-center -ml-2 md:-ml-4 z-50">
+                <img src="logo.jpg" id="brand-logo" alt="Baked by Kasia Logo" class="h-16 md:h-24 lg:h-32 w-auto object-contain mix-blend-multiply transition-all duration-500 hover:scale-105">
             </a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
                 <a href="#about" class="hover:text-gold transition-colors">About</a>
                 <a href="#creations" class="hover:text-gold transition-colors">Creations</a>
@@ -85,28 +87,42 @@
                 <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
             </div>
             <a href="#contact" class="hidden md:inline-block bg-charcoal text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300">Request Quote</a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-charcoal focus:outline-none z-50 relative">
+                <i data-lucide="menu" class="w-8 h-8 transition-transform duration-300"></i>
+            </button>
         </div>
     </nav>
 
+    <!-- Fullscreen Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-lg z-[45] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500">
+        <a href="#about" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">About</a>
+        <a href="#creations" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Creations</a>
+        <a href="#details" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Order Info</a>
+        <a href="#contact" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Contact</a>
+        <a href="#contact" class="mobile-link mt-4 bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg">Request Quote</a>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <div class="absolute top-20 left-10 w-96 h-96 bg-cyan/20 rounded-full blur-[100px] -z-10"></div>
-        <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple/20 rounded-full blur-[100px] -z-10"></div>
+    <section class="hero-bg min-h-screen flex items-center pt-24 md:pt-20 relative overflow-hidden">
+        <div class="absolute top-20 left-4 md:left-10 w-64 md:w-96 h-64 md:h-96 bg-cyan/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
+        <div class="absolute bottom-10 right-4 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-purple/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
         
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="hero-text-container space-y-8">
-                <p class="hero-el text-gold uppercase tracking-[0.3em] text-sm font-bold">Artisan Cakes in London</p>
-                <h1 class="hero-el text-5xl md:text-7xl font-serif font-bold leading-tight text-charcoal">
+            <div class="hero-text-container space-y-6 md:space-y-8 text-center md:text-left mt-10 md:mt-0">
+                <p class="hero-el text-gold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm font-bold">Artisan Cakes in London</p>
+                <h1 class="hero-el text-4xl sm:text-5xl md:text-7xl font-serif font-bold leading-tight text-charcoal">
                     Edible Art for <br>
                     <span class="italic text-purple">Unforgettable</span><br>
                     Moments.
                 </h1>
-                <p class="hero-el text-lg text-gray-600 max-w-md leading-relaxed">
+                <p class="hero-el text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed">
                     Custom celebration cakes designed for birthdays, baby showers, weddings, and special occasions. Handcrafted to order using premium ingredients.
                 </p>
-                <div class="hero-el flex space-x-4">
-                    <a href="#contact" class="bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg">Start Your Order</a>
-                    <a href="#creations" class="border border-charcoal text-charcoal px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300">View Gallery</a>
+                <div class="hero-el flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg text-center">Start Your Order</a>
+                    <a href="#creations" class="border border-charcoal text-charcoal px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300 text-center">View Gallery</a>
                 </div>
             </div>
             <div class="hero-img-container relative hidden md:block">
@@ -117,30 +133,30 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="gsap-fade-in relative">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-4/5 ml-auto">
-                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="absolute -bottom-10 -left-10 w-1/2 rounded-2xl shadow-2xl border-8 border-white">
+    <section id="about" class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="gsap-fade-in relative mt-8 md:mt-0">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-full md:w-4/5 ml-auto">
+                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="absolute -bottom-6 -left-4 md:-bottom-10 md:-left-10 w-2/3 md:w-1/2 rounded-2xl shadow-2xl border-4 md:border-8 border-white">
             </div>
-            <div class="gsap-fade-in space-y-6">
-                <h2 class="text-4xl font-serif font-bold text-charcoal">The Signature Vibe</h2>
-                <div class="w-20 h-1 bg-gold"></div>
-                <p class="text-gray-600 leading-relaxed text-lg">
+            <div class="gsap-fade-in space-y-6 pt-10 md:pt-0">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal">The Signature Vibe</h2>
+                <div class="w-16 md:w-20 h-1 bg-gold"></div>
+                <p class="text-gray-600 leading-relaxed text-base md:text-lg">
                     I believe that a cake shouldn't just look like a masterpiece, it should taste like one. Each cake is handcrafted to order using premium ingredients and tailored specifically to your theme, colours, and serving size.
                 </p>
-                <p class="text-gray-600 leading-relaxed text-lg">
+                <p class="text-gray-600 leading-relaxed text-base md:text-lg">
                     Clients typically book for children’s birthdays, milestone celebrations, and bespoke events. Because I have very limited weekly availability to ensure quality, early booking is highly recommended—especially for weekend dates.
                 </p>
-                <ul class="space-y-4 mt-6">
-                    <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> 100% Bespoke Designs
+                <ul class="space-y-3 md:space-y-4 mt-6">
+                    <li class="flex items-center text-gray-700 text-sm md:text-base">
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> 100% Bespoke Designs
                     </li>
-                    <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> Premium Ingredients
+                    <li class="flex items-center text-gray-700 text-sm md:text-base">
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> Premium Ingredients
                     </li>
-                    <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> Inspiration Images Welcome
+                    <li class="flex items-center text-gray-700 text-sm md:text-base">
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> Inspiration Images Welcome
                     </li>
                 </ul>
             </div>
@@ -148,36 +164,81 @@
     </section>
 
     <!-- Creations Section -->
-    <section id="creations" class="py-24 bg-purple/5">
+    <section id="creations" class="py-16 md:py-24 bg-purple/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 gsap-fade-up">
-                <h2 class="text-4xl font-serif font-bold text-charcoal mb-4">Recent Masterpieces</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A glimpse into my portfolio of weddings, birthdays, and intricate sweet details.</p>
+            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Recent Masterpieces</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">A glimpse into my portfolio of weddings, birthdays, and intricate sweet details.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Gallery Item 1 -->
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=600&auto=format&fit=crop" alt="Wedding Cake" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=600&auto=format&fit=crop" alt="Wedding Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <h3 class="text-white font-serif text-2xl">Weddings</h3>
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
+                <!-- Gallery Item 2 -->
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1562777717-b6aff3453b3b?q=80&w=600&auto=format&fit=crop" alt="Birthday Cake" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1562777717-b6aff3453b3b?q=80&w=600&auto=format&fit=crop" alt="Birthday Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <h3 class="text-white font-serif text-2xl">Birthdays</h3>
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
+                <!-- Gallery Item 3 -->
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Details" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Details" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <h3 class="text-white font-serif text-2xl">Baby Showers</h3>
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Floral Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=600&auto=format&fit=crop" alt="Tiered Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 7 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=600&auto=format&fit=crop" alt="Chocolate Drip Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 8 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=600&auto=format&fit=crop" alt="Fruit Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 9 -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=600&auto=format&fit=crop" alt="Single Cupcake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12 gsap-fade-up">
-                <a href="https://facebook.com/tortow100" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-charcoal hover:text-gold transition-colors font-bold tracking-widest uppercase text-sm">
+            <div class="text-center mt-10 md:mt-12 gsap-fade-up">
+                <a href="https://facebook.com/tortow100" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-charcoal hover:text-gold transition-colors font-bold tracking-widest uppercase text-xs md:text-sm">
                     View full portfolio on Social Media <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
                 </a>
             </div>
@@ -185,91 +246,101 @@
     </section>
 
     <!-- Logistics Section -->
-    <section id="details" class="py-24 bg-charcoal text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
+    <section id="details" class="py-16 md:py-24 bg-charcoal text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-gold/10 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 gsap-fade-up">
-                <h2 class="text-4xl font-serif font-bold mb-4">How It Works</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">To maintain the highest standard of artistry and taste, I operate with strict quality controls.</p>
+            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">How It Works</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">To maintain the highest standard of artistry and taste, I operate with strict quality controls.</p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
                 <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-cyan/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="calendar-clock" class="w-10 h-10 text-cyan mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">Advance Booking</h3>
-                    <p class="text-sm text-gray-400">Early booking is highly recommended, especially for weekend dates, to source custom details.</p>
+                    <i data-lucide="calendar-clock" class="w-8 h-8 md:w-10 md:h-10 text-cyan mx-auto mb-4"></i>
+                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Advance Booking</h3>
+                    <p class="text-xs md:text-sm text-gray-400">Early booking is highly recommended, especially for weekend dates, to source custom details.</p>
                 </div>
                 <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-purple/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="gem" class="w-10 h-10 text-purple mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">Quotes Provided</h3>
-                    <p class="text-sm text-gray-400">Accurate quotes are provided after checking your event date, theme, and serving requirements.</p>
+                    <i data-lucide="gem" class="w-8 h-8 md:w-10 md:h-10 text-purple mx-auto mb-4"></i>
+                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Quotes Provided</h3>
+                    <p class="text-xs md:text-sm text-gray-400">Accurate quotes are provided after checking your event date, theme, and serving requirements.</p>
                 </div>
                 <div class="gsap-stagger-item p-6 rounded-2xl border border-gold/30 bg-gold/10 backdrop-blur-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gold text-charcoal text-[10px] uppercase font-bold px-2 py-1 rounded-bl-lg">Limited</div>
-                    <i data-lucide="shield-alert" class="w-10 h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">Weekly Availability</h3>
-                    <p class="text-sm text-gray-400">I have limited weekly availability to ensure 100% dedication to every custom project.</p>
+                    <div class="absolute top-0 right-0 bg-gold text-charcoal text-[9px] md:text-[10px] uppercase font-bold px-2 py-1 rounded-bl-lg">Limited</div>
+                    <i data-lucide="shield-alert" class="w-8 h-8 md:w-10 md:h-10 text-gold mx-auto mb-4"></i>
+                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Weekly Availability</h3>
+                    <p class="text-xs md:text-sm text-gray-400">I have limited weekly availability to ensure 100% dedication to every custom project.</p>
                 </div>
                 <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-cyan/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="credit-card" class="w-10 h-10 text-cyan mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">Secure Your Date</h3>
-                    <p class="text-sm text-gray-400">A deposit is required to lock in your date in my diary and begin the design process.</p>
+                    <i data-lucide="credit-card" class="w-8 h-8 md:w-10 md:h-10 text-cyan mx-auto mb-4"></i>
+                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Secure Your Date</h3>
+                    <p class="text-xs md:text-sm text-gray-400">A deposit is required to lock in your date in my diary and begin the design process.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Form Section -->
-    <section id="contact" class="py-24 bg-white relative">
+    <section id="contact" class="py-16 md:py-24 bg-white relative">
         <div class="absolute top-0 left-0 w-full h-full bg-cyan/5 -z-10"></div>
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div class="gsap-fade-in">
-                <h2 class="text-4xl font-serif font-bold text-charcoal mb-6">Let's Create Something Beautiful</h2>
-                <p class="text-gray-600 mb-8">Ready to start? Send a message with your date, portions needed, theme ideas, and delivery postcode. I'll get back to you with a tailored quote.</p>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16">
+            <div class="gsap-fade-in text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4 md:mb-6">Let's Create Something Beautiful</h2>
+                <p class="text-gray-600 mb-8 text-sm md:text-base">Ready to start? Send a message with your date, portions needed, theme ideas, and delivery postcode. I'll get back to you with a tailored quote.</p>
                 
-                <div class="space-y-6">
+                <div class="space-y-6 text-left">
                     <div class="flex items-start">
-                        <i data-lucide="map-pin" class="w-6 h-6 text-gold mr-4 mt-1"></i>
+                        <i data-lucide="map-pin" class="w-5 h-5 md:w-6 md:h-6 text-gold mr-4 mt-1 flex-shrink-0"></i>
                         <div>
-                            <h4 class="font-bold text-charcoal">Location & Collection</h4>
-                            <p class="text-gray-600 text-sm">6 Oaks Lane, Newbury Park, IG2 7PL, London</p>
-                            <p class="text-gray-500 text-sm mt-1">Collection available from my London location. Please arrange a time when confirming your order.</p>
+                            <h4 class="font-bold text-charcoal text-sm md:text-base">Location & Collection</h4>
+                            <p class="text-gray-600 text-xs md:text-sm">6 Oaks Lane, Newbury Park, IG2 7PL, London</p>
+                            <p class="text-gray-500 text-xs md:text-sm mt-1">Collection available from my London location. Please arrange a time when confirming your order.</p>
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i data-lucide="phone" class="w-6 h-6 text-gold mr-4"></i>
+                        <i data-lucide="phone" class="w-5 h-5 md:w-6 md:h-6 text-gold mr-4 flex-shrink-0"></i>
                         <div>
-                            <h4 class="font-bold text-charcoal">Phone / WhatsApp</h4>
-                            <a href="tel:07427669677" class="text-gray-600 text-sm hover:text-gold transition-colors">07427 669677</a>
+                            <h4 class="font-bold text-charcoal text-sm md:text-base">Phone / WhatsApp</h4>
+                            <a href="tel:07427669677" class="text-gray-600 text-xs md:text-sm hover:text-gold transition-colors">07427 669677</a>
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i data-lucide="instagram" class="w-6 h-6 text-purple mr-4"></i>
+                        <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6 text-purple mr-4 flex-shrink-0"></i>
                         <div>
-                            <h4 class="font-bold text-charcoal">Follow Me</h4>
-                            <a href="https://www.instagram.com/baked_by_kasia" target="_blank" class="text-gray-600 text-sm hover:text-gold transition-colors">@baked_by_kasia</a>
+                            <h4 class="font-bold text-charcoal text-sm md:text-base">Follow Me</h4>
+                            <a href="https://www.instagram.com/baked_by_kasia" target="_blank" class="text-gray-600 text-xs md:text-sm hover:text-gold transition-colors">@baked_by_kasia</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="gsap-fade-in bg-white p-8 rounded-2xl shadow-[0_0_40px_rgba(209,196,245,0.3)] border border-purple/20">
-                <h3 class="text-2xl font-serif font-bold text-charcoal mb-6">Request a Quote</h3>
+            <div class="gsap-fade-in bg-white p-6 md:p-8 rounded-2xl shadow-[0_0_40px_rgba(209,196,245,0.3)] border border-purple/20">
+                <h3 class="text-2xl font-serif font-bold text-charcoal mb-6 text-center md:text-left">Request a Quote</h3>
                 <!-- Form Updated with IDs for JavaScript processing -->
                 <form id="quote-form" class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Name</label>
-                            <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" required>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Name</label>
+                            <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Date</label>
-                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" required>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Date</label>
+                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Email</label>
+                            <input type="email" id="clientEmail" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Phone Number (WhatsApp)</label>
+                            <input type="tel" id="clientPhone" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Serving Size</label>
-                        <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all">
+                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Serving Size</label>
+                        <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
                             <option value="10-20 Portions">10-20 Portions</option>
                             <option value="20-40 Portions">20-40 Portions</option>
                             <option value="40-80 Portions">40-80 Portions</option>
@@ -277,8 +348,8 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Type</label>
-                        <select id="eventType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all">
+                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Type</label>
+                        <select id="eventType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
                             <option value="Children's Birthday">Children's Birthday</option>
                             <option value="Milestone Celebration">Milestone Celebration</option>
                             <option value="Baby Shower">Baby Shower</option>
@@ -287,28 +358,108 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Theme, Colours & Ideas (Links welcome)</label>
-                        <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" placeholder="Describe your vision..."></textarea>
+                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Theme, Colours & Ideas (Links welcome)</label>
+                        <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Describe your vision..."></textarea>
                     </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gold transition-colors duration-300 shadow-md">Get a Quote</button>
-                    <p class="text-xs text-center text-gray-500 mt-2">Quotes provided based on availability and design requirements.</p>
+                    <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gold transition-colors duration-300 shadow-md text-sm mt-2">Get a Quote</button>
+                    <p class="text-[10px] md:text-xs text-center text-gray-500 mt-2">Quotes provided based on availability and design requirements.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-charcoal text-white/50 text-center py-10 text-sm border-t border-white/10">
+    <footer class="bg-charcoal text-white/50 text-center py-8 md:py-10 text-xs md:text-sm border-t border-white/10">
         <p>&copy; 2026 Baked_by_Kasia LTD. All rights reserved.</p>
-        <p class="mt-3 text-xs tracking-wider">
+        <p class="mt-2 md:mt-3 text-[10px] md:text-xs tracking-wider">
             Designed & Automated by <a href="https://roofflowai.co.uk/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors underline decoration-white/30 underline-offset-4">RoofflowAI</a>
         </p>
     </footer>
+
+    <!-- Lightbox Modal (Hidden by default) -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-charcoal/95 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gold transition-colors z-50">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <div class="relative w-full h-full flex items-center justify-center p-4">
+            <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
         lucide.createIcons();
 
-        // Form Handling Logic (Webhook Integration)
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            // Timeout to allow image source to swap before animation starts
+            setTimeout(() => {
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 50);
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightboxImg.src = '';
+            }, 300);
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+
+        // Attach click events to all gallery items
+        document.querySelectorAll('.gsap-gallery-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                const img = item.querySelector('img');
+                if (img) openLightbox(img.src);
+            });
+        });
+
+        // Close logic
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) closeLightbox();
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons(); // refresh icon
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Form Handling Logic (Webhook Integration with WhatsApp Fallback)
         document.getElementById('quote-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -322,6 +473,8 @@
 
             const payload = {
                 name: document.getElementById('clientName').value,
+                email: document.getElementById('clientEmail').value,
+                phone: document.getElementById('clientPhone').value,
                 eventDate: document.getElementById('eventDate').value,
                 servingSize: document.getElementById('servingSize').value,
                 eventType: document.getElementById('eventType').value,
@@ -330,7 +483,7 @@
             };
 
             try {
-                // Connecting to n8n Railway Webhook
+                // Attempt to send to n8n Webhook
                 const response = await fetch('https://primary-production-58a3.up.railway.app/webhook/22778059-d7fa-4a84-8bbd-8e4050503c7a', {
                     method: 'POST',
                     headers: {
@@ -340,31 +493,49 @@
                 });
 
                 if (response.ok) {
-                    // UI Feedback: Success
+                    // Success - n8n received it
                     submitBtn.innerText = 'Request Sent Successfully!';
                     submitBtn.classList.replace('bg-charcoal', 'bg-green-600');
                     submitBtn.classList.replace('hover:bg-gold', 'hover:bg-green-700');
-                    e.target.reset(); // Clear form
+                    e.target.reset(); 
                 } else {
-                    throw new Error('Network response was not ok.');
+                    // Server responded, but not with a 2xx success code
+                    throw new Error(`Server error: ${response.status}`);
                 }
             } catch (error) {
-                console.error('Webhook Error:', error);
-                // UI Feedback: Error
-                submitBtn.innerText = 'Error. Please try again.';
-                submitBtn.classList.replace('bg-charcoal', 'bg-red-600');
-                submitBtn.classList.replace('hover:bg-gold', 'hover:bg-red-700');
-            } finally {
-                // Reset button state after 4 seconds
+                console.error('Webhook Error / Fallback triggered:', error);
+                
+                // --- WHATSAPP FALLBACK LOGIC ---
+                // If the webhook fails (e.g. server down, network issue), redirect to WhatsApp directly
+                
+                submitBtn.innerText = 'Redirecting to WhatsApp...';
+                submitBtn.classList.replace('bg-charcoal', 'bg-purple');
+                
+                const kasiaPhone = "447427669677"; // UK format without the leading 0
+                
+                // Construct a pre-filled WhatsApp message
+                let waMessage = `Hi Kasia! I tried using your website form, but it seems there was a hiccup. Here are my cake requirements:%0A%0A`;
+                waMessage += `*Name:* ${payload.name}%0A`;
+                waMessage += `*Date:* ${payload.eventDate}%0A`;
+                waMessage += `*Size:* ${payload.servingSize}%0A`;
+                waMessage += `*Event:* ${payload.eventType}%0A`;
+                if(payload.themeDetails) {
+                    waMessage += `*Details:* ${payload.themeDetails}%0A`;
+                }
+                
+                const waUrl = `https://wa.me/${kasiaPhone}?text=${waMessage}`;
+                
+                // Small delay so user sees the "Redirecting" text before the jump
                 setTimeout(() => {
-                    submitBtn.innerText = originalText;
+                    window.open(waUrl, '_blank');
+                    
+                    // Reset button state
+                    submitBtn.innerText = 'Request Sent (via WhatsApp)';
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-                    submitBtn.classList.replace('bg-green-600', 'bg-charcoal');
-                    submitBtn.classList.replace('hover:bg-green-700', 'hover:bg-gold');
-                    submitBtn.classList.replace('bg-red-600', 'bg-charcoal');
-                    submitBtn.classList.replace('hover:bg-red-700', 'hover:bg-gold');
-                }, 4000);
+                    submitBtn.classList.replace('bg-purple', 'bg-green-600');
+                    e.target.reset();
+                }, 1500);
             }
         });
 
@@ -378,14 +549,14 @@
                 
                 if (window.scrollY > 50) {
                     nav.classList.add("bg-white/95", "backdrop-blur-md", "shadow-sm");
-                    nav.classList.remove("py-6");
+                    nav.classList.remove("py-4", "md:py-6");
                     nav.classList.add("py-2");
                     
                     logo.classList.remove("h-24", "md:h-32");
                     logo.classList.add("h-16", "md:h-20");
                 } else {
                     nav.classList.remove("bg-white/95", "backdrop-blur-md", "shadow-sm");
-                    nav.classList.add("py-6");
+                    nav.classList.add("py-4", "md:py-6");
                     nav.classList.remove("py-2");
                     
                     logo.classList.remove("h-16", "md:h-20");
@@ -393,20 +564,25 @@
                 }
             });
 
+            // Prevent JS errors on mobile if elements aren't visible
+            const isMobile = window.innerWidth < 768;
+
             const heroTimeline = gsap.timeline();
-            heroTimeline.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" })
-            .from(".hero-img", { scale: 1.1, opacity: 0, duration: 1.2, ease: "power2.out" }, "-=1");
+            heroTimeline.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" });
+            if(!isMobile) {
+               heroTimeline.from(".hero-img", { scale: 1.1, opacity: 0, duration: 1.2, ease: "power2.out" }, "-=1");
+            }
 
             gsap.utils.toArray('.gsap-fade-in').forEach(element => {
-                gsap.from(element, { scrollTrigger: { trigger: element, start: "top 80%", toggleActions: "play none none none" }, y: 50, opacity: 0, duration: 0.8, ease: "power2.out" });
+                gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" }, y: 50, opacity: 0, duration: 0.8, ease: "power2.out" });
             });
 
             gsap.utils.toArray('.gsap-fade-up').forEach(element => {
                 gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%" }, y: 30, opacity: 0, duration: 0.6, ease: "power2.out" });
             });
 
-            gsap.from('.gsap-gallery-item', { scrollTrigger: { trigger: "#creations", start: "top 70%" }, y: 50, opacity: 0, duration: 0.6, stagger: 0.2, ease: "power2.out" });
-            gsap.from('.gsap-stagger-item', { scrollTrigger: { trigger: "#details", start: "top 70%" }, y: 30, opacity: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" });
+            gsap.from('.gsap-gallery-item', { scrollTrigger: { trigger: "#creations", start: "top 75%" }, y: 50, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.2, ease: "power2.out" });
+            gsap.from('.gsap-stagger-item', { scrollTrigger: { trigger: "#details", start: "top 75%" }, y: 30, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.15, ease: "power2.out" });
         });
     </script>
 </body>
