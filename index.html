@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom celebration cakes in London designed for birthdays, baby showers, weddings, and special occasions. Each cake is handcrafted to order using premium ingredients.">
     <title>Baked by Kasia | Artisan Cakes in London</title>
     
     <!-- Google Fonts -->
@@ -17,10 +18,11 @@
             theme: {
                 extend: {
                     colors: {
-                        blush: '#fdf8f5',
-                        rose: '#e8d3d0',
-                        gold: '#d4af37',
-                        charcoal: '#333333',
+                        base: '#fafbfe', /* Bardzo delikatny błękit/biel pod tło */
+                        cyan: '#8ce2e9', /* Z akwareli w logo */
+                        purple: '#d1c4f5', /* Z akwareli w logo */
+                        gold: '#c29b46', /* Złoto z ramki heksagonu */
+                        charcoal: '#1a1a1a',
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -40,12 +42,12 @@
 
     <style>
         body {
-            background-color: #fdf8f5;
-            color: #333333;
+            background-color: #fafbfe;
+            color: #1a1a1a;
             overflow-x: hidden;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(253, 248, 245, 0.8), rgba(253, 248, 245, 0.9)), url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(250, 251, 254, 0.85), rgba(250, 251, 254, 0.95)), url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -58,23 +60,25 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #fdf8f5;
+            background: #fafbfe;
         }
         ::-webkit-scrollbar-thumb {
-            background: #e8d3d0;
+            background: #d1c4f5;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
+            background: #c29b46;
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-rose selection:text-charcoal">
+<body class="font-sans antialiased selection:bg-purple selection:text-charcoal">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold text-charcoal tracking-wider">Baked by Kasia.</a>
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg" alt="Baked by Kasia Logo" class="h-16 w-auto object-contain">
+            </a>
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
                 <a href="#about" class="hover:text-gold transition-colors">About</a>
                 <a href="#creations" class="hover:text-gold transition-colors">Creations</a>
@@ -86,17 +90,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center pt-20">
+    <section class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-96 h-96 bg-cyan/20 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple/20 rounded-full blur-[100px] -z-10"></div>
+        
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="hero-text-container space-y-8">
                 <p class="hero-el text-gold uppercase tracking-[0.3em] text-sm font-bold">Artisan Cakes in London</p>
                 <h1 class="hero-el text-5xl md:text-7xl font-serif font-bold leading-tight text-charcoal">
                     Edible Art for <br>
-                    <span class="italic text-rose-600">Unforgettable</span><br>
+                    <span class="italic text-purple">Unforgettable</span><br>
                     Moments.
                 </h1>
                 <p class="hero-el text-lg text-gray-600 max-w-md leading-relaxed">
-                    Exquisite, bespoke tiered cakes crafted with passion for weddings, christenings, and luxury celebrations across East London.
+                    Custom celebration cakes designed for birthdays, baby showers, weddings, and special occasions. Handcrafted to order using premium ingredients.
                 </p>
                 <div class="hero-el flex space-x-4">
                     <a href="#contact" class="bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg">Start Your Order</a>
@@ -111,7 +118,7 @@
     </section>
 
     <!-- About / Signature Section -->
-    <section id="about" class="py-24 bg-white">
+    <section id="about" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="gsap-fade-in relative">
                 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-4/5 ml-auto">
@@ -121,20 +128,20 @@
                 <h2 class="text-4xl font-serif font-bold text-charcoal">The Signature Vibe</h2>
                 <div class="w-20 h-1 bg-gold"></div>
                 <p class="text-gray-600 leading-relaxed text-lg">
-                    I believe that a cake shouldn't just look like a masterpiece, it should taste like one. My signature creations are <strong>Artistic Tiered Cakes</strong> designed for clients who appreciate fine details, quality ingredients, and modern design.
+                    I believe that a cake shouldn't just look like a masterpiece, it should taste like one. Each cake is handcrafted to order using premium ingredients and tailored specifically to your theme, colours, and serving size.
                 </p>
                 <p class="text-gray-600 leading-relaxed text-lg">
-                    Whether it's a stylish 1st birthday in East London or an elegant wedding, every cake is a unique project tailored to your vision.
+                    Clients typically book for children’s birthdays, milestone celebrations, and bespoke events. Because I have very limited weekly availability to ensure quality, early booking is highly recommended—especially for weekend dates.
                 </p>
                 <ul class="space-y-4 mt-6">
                     <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-gold mr-3 w-5 h-5"></i> 100% Bespoke Designs
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> 100% Bespoke Designs
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-gold mr-3 w-5 h-5"></i> Premium Ingredients
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> Premium Ingredients
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <i data-lucide="check-circle-2" class="text-gold mr-3 w-5 h-5"></i> Vegan Options Available
+                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5"></i> Inspiration Images Welcome
                     </li>
                 </ul>
             </div>
@@ -142,7 +149,7 @@
     </section>
 
     <!-- Creations / Gallery Grid -->
-    <section id="creations" class="py-24 bg-blush">
+    <section id="creations" class="py-24 bg-purple/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 gsap-fade-up">
                 <h2 class="text-4xl font-serif font-bold text-charcoal mb-4">Recent Masterpieces</h2>
@@ -168,7 +175,7 @@
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Details" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <h3 class="text-white font-serif text-2xl">Sweet Details</h3>
+                        <h3 class="text-white font-serif text-2xl">Baby Showers</h3>
                     </div>
                 </div>
             </div>
@@ -181,9 +188,9 @@
         </div>
     </section>
 
-    <!-- Logistics & Scarcity (The B2B Logic translated to B2C Elegance) -->
+    <!-- Logistics & Scarcity -->
     <section id="details" class="py-24 bg-charcoal text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 gsap-fade-up">
                 <h2 class="text-4xl font-serif font-bold mb-4">How It Works</h2>
@@ -191,33 +198,34 @@
             </div>
 
             <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="calendar-clock" class="w-10 h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">14 Days Notice</h3>
-                    <p class="text-sm text-gray-400">Minimum lead time required to source fresh floral arrangements and custom details.</p>
+                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-cyan/50 transition-colors bg-white/5 backdrop-blur-sm">
+                    <i data-lucide="calendar-clock" class="w-10 h-10 text-cyan mx-auto mb-4"></i>
+                    <h3 class="font-serif text-xl font-bold mb-2">Advance Booking</h3>
+                    <p class="text-sm text-gray-400">Early booking is highly recommended, especially for weekend dates, to source custom details.</p>
                 </div>
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="gem" class="w-10 h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">£120 Minimum</h3>
-                    <p class="text-sm text-gray-400">Custom orders start at £120, ensuring premium quality for your bespoke design.</p>
+                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-purple/50 transition-colors bg-white/5 backdrop-blur-sm">
+                    <i data-lucide="gem" class="w-10 h-10 text-purple mx-auto mb-4"></i>
+                    <h3 class="font-serif text-xl font-bold mb-2">Quotes Provided</h3>
+                    <p class="text-sm text-gray-400">Accurate quotes are provided after checking your event date, theme, and serving requirements.</p>
                 </div>
                 <div class="gsap-stagger-item p-6 rounded-2xl border border-gold/30 bg-gold/10 backdrop-blur-sm relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-gold text-charcoal text-[10px] uppercase font-bold px-2 py-1 rounded-bl-lg">Limited</div>
                     <i data-lucide="shield-alert" class="w-10 h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">4 Projects / Week</h3>
-                    <p class="text-sm text-gray-400">I accept a maximum of 4 large projects weekly to ensure 100% dedication to your cake.</p>
+                    <h3 class="font-serif text-xl font-bold mb-2">Weekly Availability</h3>
+                    <p class="text-sm text-gray-400">I have limited weekly availability to ensure 100% dedication to every custom project.</p>
                 </div>
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-colors bg-white/5 backdrop-blur-sm">
-                    <i data-lucide="credit-card" class="w-10 h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-2">50% Deposit</h3>
-                    <p class="text-sm text-gray-400">A secure 50% deposit is required via Stripe/Revolut to secure your date in my diary.</p>
+                <div class="gsap-stagger-item p-6 rounded-2xl border border-white/10 hover:border-cyan/50 transition-colors bg-white/5 backdrop-blur-sm">
+                    <i data-lucide="credit-card" class="w-10 h-10 text-cyan mx-auto mb-4"></i>
+                    <h3 class="font-serif text-xl font-bold mb-2">Secure Your Date</h3>
+                    <p class="text-sm text-gray-400">A deposit is required to lock in your date in my diary and begin the design process.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Footer -->
-    <section id="contact" class="py-24 bg-white">
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-cyan/5 -z-10"></div>
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div class="gsap-fade-in">
                 <h2 class="text-4xl font-serif font-bold text-charcoal mb-6">Let's Create Something Beautiful</h2>
@@ -227,9 +235,9 @@
                     <div class="flex items-start">
                         <i data-lucide="map-pin" class="w-6 h-6 text-gold mr-4 mt-1"></i>
                         <div>
-                            <h4 class="font-bold text-charcoal">Location & Delivery</h4>
+                            <h4 class="font-bold text-charcoal">Location & Collection</h4>
                             <p class="text-gray-600 text-sm">6 Oaks Lane, Newbury Park, IG2 7PL, London</p>
-                            <p class="text-gray-500 text-sm mt-1">Collection available from IG11 (Barking). Delivery available to E, IG, RM postcodes (Free within 3 miles, £2/mile thereafter).</p>
+                            <p class="text-gray-500 text-sm mt-1">Collection available from my London location. Please arrange a time when confirming your order.</p>
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -240,56 +248,63 @@
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i data-lucide="instagram" class="w-6 h-6 text-gold mr-4"></i>
+                        <i data-lucide="instagram" class="w-6 h-6 text-purple mr-4"></i>
                         <div>
                             <h4 class="font-bold text-charcoal">Follow Me</h4>
-                            <a href="#" class="text-gray-600 text-sm hover:text-gold transition-colors">@baked_by_kasia</a>
+                            <a href="https://www.instagram.com/baked_by_kasia" target="_blank" class="text-gray-600 text-sm hover:text-gold transition-colors">@baked_by_kasia</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="gsap-fade-in bg-rose/20 p-8 rounded-2xl">
-                <!-- Placeholder for the n8n form -->
+            <div class="gsap-fade-in bg-white p-8 rounded-2xl shadow-[0_0_40px_rgba(209,196,245,0.3)] border border-purple/20">
                 <h3 class="text-2xl font-serif font-bold text-charcoal mb-6">Request a Quote</h3>
                 <form class="space-y-4" onsubmit="event.preventDefault(); alert('This will be connected to your n8n automation webhook!');">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-gold outline-none" required>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" required>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Date</label>
-                            <input type="date" class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-gold outline-none" required>
+                            <input type="date" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" required>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Portions Needed</label>
-                        <select class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-gold outline-none">
-                            <option>10-20</option>
-                            <option>20-40</option>
-                            <option>40-80</option>
-                            <option>80+</option>
+                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Serving Size</label>
+                        <select class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all">
+                            <option>10-20 Portions</option>
+                            <option>20-40 Portions</option>
+                            <option>40-80 Portions</option>
+                            <option>80+ Portions</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Delivery Postcode (or Collection)</label>
-                        <input type="text" placeholder="e.g. IG2 7PL or Collection" class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-gold outline-none" required>
+                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Type</label>
+                        <select class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all">
+                            <option>Children's Birthday</option>
+                            <option>Milestone Celebration</option>
+                            <option>Baby Shower</option>
+                            <option>Wedding</option>
+                            <option>Other Event</option>
+                        </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Design Ideas / Theme</label>
-                        <textarea rows="3" class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-gold outline-none" placeholder="Describe your vision..."></textarea>
+                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Theme, Colours & Ideas (Links welcome)</label>
+                        <textarea rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all" placeholder="Describe your vision..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-charcoal text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gold transition-colors duration-300">Submit Request</button>
-                    <p class="text-xs text-center text-gray-500 mt-2">By submitting, you acknowledge the minimum order value of £120.</p>
+                    <button type="submit" class="w-full bg-charcoal text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gold transition-colors duration-300 shadow-md">Get a Quote</button>
+                    <p class="text-xs text-center text-gray-500 mt-2">Quotes provided based on availability and design requirements.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-charcoal text-white/50 text-center py-8 text-sm">
-        <p>&copy; 2026 Katarzyna Smith Cakes Ltd (Baked by Kasia). All rights reserved.</p>
-        <p class="mt-2 text-xs">Designed & Automated by Roger</p>
+    <footer class="bg-charcoal text-white/50 text-center py-10 text-sm border-t border-white/10">
+        <p>&copy; 2026 Baked_by_Kasia LTD. All rights reserved.</p>
+        <p class="mt-3 text-xs tracking-wider">
+            Designed & Automated by <a href="https://roofflowai.co.uk/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors underline decoration-white/30 underline-offset-4">RoofflowAI</a>
+        </p>
     </footer>
 
     <!-- Initialize Scripts -->
@@ -305,11 +320,11 @@
             window.addEventListener("scroll", () => {
                 const nav = document.getElementById("navbar");
                 if (window.scrollY > 50) {
-                    nav.classList.add("bg-white", "shadow-md");
+                    nav.classList.add("bg-white/95", "backdrop-blur-md", "shadow-sm");
                     nav.classList.remove("py-4");
                     nav.classList.add("py-2");
                 } else {
-                    nav.classList.remove("bg-white", "shadow-md");
+                    nav.classList.remove("bg-white/95", "backdrop-blur-md", "shadow-sm");
                     nav.classList.add("py-4");
                     nav.classList.remove("py-2");
                 }
