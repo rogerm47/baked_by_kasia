@@ -600,14 +600,24 @@
                 servingSize: document.getElementById('servingSize').value,
                 cakeFlavor: document.getElementById('cakeFlavor').value,
                 themeDetails: document.getElementById('themeDetails').value,
+                hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
+
+            // Pakujemy payload i plik binarny do FormData
+            const formData = new FormData();
+            Object.keys(payload).forEach(key => formData.append(key, payload[key]));
+            
+            const imageInput = document.getElementById('inspirationImage');
+            if (payload.hasInspirationImage) {
+                formData.append('inspiration_image', imageInput.files[0]);
+            }
 
             try {
                 const response = await fetch('https://primary-production-58a3.up.railway.app/webhook/22778059-d7fa-4a84-8bbd-8e4050503c7a', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    // Usuwamy nagłówek Content-Type - przy FormData przeglądarka ustawi go automatycznie
+                    body: formData
                 });
 
                 if (response.ok) {
