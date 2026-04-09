@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Custom celebration cakes in London designed for birthdays, baby showers, weddings, and special occasions. Handcrafted bespoke cakes made to order.">
-    <title>Baked by Kasia | Custom Celebration Cakes in London</title>
+    <meta name="description" content="Love at first bite. Custom celebration cakes in London designed for birthdays, baby showers, and weddings. Collection from IG2 7PL.">
+    <title>Baked by Kasia | Love at First Bite | Custom Cakes London</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,6 @@
         ::-webkit-scrollbar-thumb { background: #d1c4f5; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #c29b46; }
         
-        /* Custom file upload styling */
         input[type="file"]::file-selector-button {
             border: 1px solid #e5e7eb;
             padding: 0.5rem 1rem;
@@ -83,8 +82,9 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-4 md:py-6" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex items-center z-50">
+            <a href="#" class="flex flex-col z-50">
                 <span id="brand-text" class="text-2xl md:text-3xl font-serif font-bold text-charcoal tracking-wider transition-all duration-500">Baked by Kasia.</span>
+                <span class="text-[10px] text-gold uppercase tracking-widest font-bold mt-1">Love at First Bite</span>
             </a>
             
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
@@ -109,7 +109,7 @@
         <a href="#gallery" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Gallery</a>
     </div>
 
-    <!-- Hero Section (Updated for Conversion) -->
+    <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center pt-28 md:pt-20 relative overflow-hidden">
         <div class="absolute top-20 left-4 md:left-10 w-64 md:w-96 h-64 md:h-96 bg-cyan/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
         <div class="absolute bottom-10 right-4 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-purple/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
@@ -121,7 +121,7 @@
                     <span class="italic text-purple">Cakes</span> in London.
                 </h1>
                 <p class="hero-el text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed font-medium">
-                    Handcrafted birthday, baby shower and bespoke event cakes made to order.<br>
+                    Love at first bite. Handcrafted birthday, baby shower and bespoke event desserts made to order.<br>
                     <span class="text-charcoal font-bold mt-2 block">Check availability for your date in under 60 seconds.</span>
                 </p>
                 <div class="hero-el flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -129,7 +129,7 @@
                     <a href="#gallery" class="border border-charcoal text-charcoal px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300 text-center">View Cake Gallery</a>
                 </div>
                 <p class="hero-el text-xs md:text-sm text-gray-500 font-medium">
-                    <i data-lucide="clock" class="inline w-4 h-4 mr-1 text-gold"></i> Limited weekly availability. Early booking recommended for weekend dates.
+                    <i data-lucide="clock" class="inline w-4 h-4 mr-1 text-gold"></i> Minimum 7 days notice required.
                 </p>
             </div>
             <div class="hero-img-container relative block mt-4 md:mt-0 mb-10 md:mb-0">
@@ -139,40 +139,35 @@
         </div>
     </section>
 
-    <!-- Availability Check Form Section (Moved right under Hero) -->
+    <!-- Availability Check Form Section -->
     <section id="enquiry" class="py-16 md:py-24 bg-white relative">
         <div class="absolute top-0 left-0 w-full h-full bg-cyan/5 -z-10"></div>
         <div class="max-w-4xl mx-auto px-6">
             <div class="gsap-fade-up text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Check if your date is still available</h2>
-                <p class="text-gray-600 text-sm md:text-base">I take a limited number of orders each week to ensure premium quality. Fill out the form below to secure your spot.</p>
+                <p class="text-gray-600 text-sm md:text-base">Please fill out the form below to secure your spot. Note: Collection strictly from IG2 7PL (Delivery available for Weddings only).</p>
             </div>
             
             <div class="gsap-fade-in bg-white p-6 md:p-10 rounded-3xl shadow-[0_0_50px_rgba(209,196,245,0.4)] border border-purple/20">
                 <form id="availability-form" class="space-y-6">
+                    <!-- Client Details -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Name</label>
                             <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Date</label>
-                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Email</label>
-                            <input type="email" id="clientEmail" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
-                        </div>
-                        <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Phone Number</label>
                             <input type="tel" id="clientPhone" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
-
+                    
+                    <!-- Event Details -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Date</label>
+                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                        </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Type</label>
                             <select id="eventType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
@@ -184,41 +179,51 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Number of Servings</label>
-                            <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
-                                <option value="10-20 Portions">10-20 Portions</option>
-                                <option value="20-40 Portions">20-40 Portions</option>
-                                <option value="40-80 Portions">40-80 Portions</option>
-                                <option value="80+ Portions">80+ Portions</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Budget Range</label>
-                            <select id="budgetRange" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
-                                <option value="£80–£150">£80–£150</option>
-                                <option value="£150–£300">£150–£300</option>
-                                <option value="£300+">£300+</option>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Logistics</label>
+                            <select id="logistics" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
+                                <option value="Collection IG2 7PL">Collection (IG2 7PL)</option>
+                                <option value="Wedding Delivery">Delivery (Wedding Cakes Only)</option>
                             </select>
                         </div>
                     </div>
 
+                    <!-- Cake Specifications -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Inspiration Image (Optional)</label>
-                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Order Size / Portions</label>
+                            <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
+                                <option value="Bento Cake">Bento Cake</option>
+                                <option value="6 Cupcakes">6 Cupcakes (Minimum)</option>
+                                <option value="10 Cakepops">10 Cakepops (Minimum)</option>
+                                <option value="Custom Cake 10-20">Custom Cake (10-20 Portions)</option>
+                                <option value="Custom Cake 20-40">Custom Cake (20-40 Portions)</option>
+                                <option value="Custom Cake 40+">Custom Cake (40+ Portions)</option>
+                            </select>
                         </div>
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Collection Postcode</label>
-                            <input type="text" id="postcode" placeholder="e.g. IG2 7PL" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Flavor Preference</label>
+                            <input type="text" id="cakeFlavor" placeholder="e.g. Vanilla, Chocolate, Lemon..." class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                        </div>
+                    </div>
+
+                    <!-- Design Details -->
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Theme & Inspiration Details</label>
+                            <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Describe your vision, colors, and theme..." required></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Upload Inspiration Image (Optional)</label>
+                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
                         </div>
                     </div>
 
                     <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold transition-colors duration-300 shadow-xl text-sm mt-4">Check Availability</button>
                     
-                    <!-- Pricing Expectation -->
+                    <!-- Pricing & Policy Expectation -->
                     <div class="bg-gray-50 p-4 rounded-lg mt-6 border border-gray-100 text-center">
                         <p class="text-xs md:text-sm text-gray-600 font-medium">
-                            <i data-lucide="info" class="inline w-4 h-4 mr-1 text-gold"></i> Most custom cakes range between £120–£300 depending on size and design complexity.
+                            <i data-lucide="info" class="inline w-4 h-4 mr-1 text-gold"></i> Orders require a 50% non-refundable deposit. Minimum 7 days notice. Custom cakes generally range from £120–£300.
                         </p>
                     </div>
                 </form>
@@ -236,26 +241,26 @@
                 <div class="w-16 h-1 bg-gold mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="gsap-stagger-item flex flex-col items-center p-4">
-                    <i data-lucide="pen-tool" class="w-8 h-8 text-gold mb-4"></i>
-                    <h3 class="font-bold text-sm md:text-base mb-2">Handcrafted bespoke cake designs</h3>
+                    <i data-lucide="palette" class="w-10 h-10 text-cyan mb-4"></i>
+                    <h3 class="font-bold text-base md:text-lg mb-2">Bespoke Handcrafted Designs</h3>
+                    <p class="text-sm text-gray-400">Made exactly to match your theme and colours.</p>
                 </div>
                 <div class="gsap-stagger-item flex flex-col items-center p-4">
-                    <i data-lucide="palette" class="w-8 h-8 text-cyan mb-4"></i>
-                    <h3 class="font-bold text-sm md:text-base mb-2">Made to match your theme and colours</h3>
+                    <i data-lucide="star" class="w-10 h-10 text-purple mb-4"></i>
+                    <h3 class="font-bold text-base md:text-lg mb-2">Premium Ingredients</h3>
+                    <p class="text-sm text-gray-400">Flawless finishes and incredible taste in every bite.</p>
                 </div>
                 <div class="gsap-stagger-item flex flex-col items-center p-4">
-                    <i data-lucide="star" class="w-8 h-8 text-purple mb-4"></i>
-                    <h3 class="font-bold text-sm md:text-base mb-2">Premium finishes and attention to detail</h3>
+                    <i data-lucide="map-pin" class="w-10 h-10 text-gold mb-4"></i>
+                    <h3 class="font-bold text-base md:text-lg mb-2">London Collection</h3>
+                    <p class="text-sm text-gray-400">Convenient collection from IG2 7PL (Delivery for weddings).</p>
                 </div>
                 <div class="gsap-stagger-item flex flex-col items-center p-4">
-                    <i data-lucide="map-pin" class="w-8 h-8 text-gold mb-4"></i>
-                    <h3 class="font-bold text-sm md:text-base mb-2">Collection available from London location</h3>
-                </div>
-                <div class="gsap-stagger-item flex flex-col items-center p-4 sm:col-span-2 md:col-span-1">
-                    <i data-lucide="shield-alert" class="w-8 h-8 text-cyan mb-4"></i>
-                    <h3 class="font-bold text-sm md:text-base mb-2">Limited number of cakes accepted each week</h3>
+                    <i data-lucide="shield-alert" class="w-10 h-10 text-cyan mb-4"></i>
+                    <h3 class="font-bold text-base md:text-lg mb-2">Exclusive Availability</h3>
+                    <p class="text-sm text-gray-400">Strictly limited orders each week to guarantee perfection.</p>
                 </div>
             </div>
         </div>
@@ -315,7 +320,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12 md:mb-16 gsap-fade-up">
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Design Portfolio</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Explore recent celebration cakes London clients have requested.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Explore recent custom celebration cakes London clients have requested.</p>
             </div>
             
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
@@ -366,7 +371,6 @@
             <h2 class="text-2xl md:text-3xl font-serif font-bold text-charcoal mb-8 gsap-fade-up">See latest cake designs on Instagram</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                <!-- Mocking the Instagram feed with uploads -->
                 <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square">
                     <img src="IMG_3172.jpg" alt="Baby shower cake Instagram" onerror="this.src='https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=400&fit=crop'" class="w-full h-full object-cover">
                 </div>
@@ -486,7 +490,7 @@
             });
         });
 
-        // Form Webhook Logic with Fallback
+        // Form Webhook Logic with Fallback for Enquiries
         document.getElementById('availability-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -499,15 +503,13 @@
 
             const payload = {
                 name: document.getElementById('clientName').value,
-                email: document.getElementById('clientEmail').value,
                 phone: document.getElementById('clientPhone').value,
                 eventDate: document.getElementById('eventDate').value,
                 eventType: document.getElementById('eventType').value,
+                logistics: document.getElementById('logistics').value,
                 servingSize: document.getElementById('servingSize').value,
-                budgetRange: document.getElementById('budgetRange').value,
-                postcode: document.getElementById('postcode').value,
-                // Note: File input requires Base64 conversion or multipart/form-data for n8n.
-                // Sending filename just as a placeholder for this JSON payload.
+                cakeFlavor: document.getElementById('cakeFlavor').value,
+                themeDetails: document.getElementById('themeDetails').value,
                 hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
@@ -535,13 +537,14 @@
                 
                 const kasiaPhone = "447427669677"; 
                 
-                let waMessage = `Hi Kasia! I'm checking availability for a cake:%0A%0A`;
+                let waMessage = `Hi Kasia! I'm checking availability for a cake order:%0A%0A`;
                 waMessage += `*Name:* ${payload.name}%0A`;
                 waMessage += `*Date:* ${payload.eventDate}%0A`;
                 waMessage += `*Event:* ${payload.eventType}%0A`;
-                waMessage += `*Servings:* ${payload.servingSize}%0A`;
-                waMessage += `*Budget:* ${payload.budgetRange}%0A`;
-                waMessage += `*Postcode:* ${payload.postcode}%0A`;
+                waMessage += `*Logistics:* ${payload.logistics}%0A`;
+                waMessage += `*Size/Type:* ${payload.servingSize}%0A`;
+                waMessage += `*Flavor:* ${payload.cakeFlavor}%0A`;
+                waMessage += `*Theme:* ${payload.themeDetails}%0A`;
                 if(payload.hasInspirationImage) {
                     waMessage += `(I have an inspiration image to share!)`;
                 }
