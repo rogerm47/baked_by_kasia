@@ -74,23 +74,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #c29b46;
         }
-
-        input[type="file"]::file-selector-button {
-            border: 1px solid #e5e7eb;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: #fdfdfd;
-            transition: 1s;
-            color: #1a1a1a;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            background-color: #f3f4f6;
-        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-purple selection:text-charcoal relative">
@@ -258,10 +241,6 @@
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Theme or Occasion</label>
                             <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Tell me about the birthday, theme, colours, etc." required></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Upload Inspiration Image (Optional)</label>
-                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
                         </div>
                     </div>
 
@@ -621,7 +600,6 @@
                 servingSize: document.getElementById('servingSize').value,
                 cakeFlavor: document.getElementById('cakeFlavor').value,
                 themeDetails: document.getElementById('themeDetails').value,
-                hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
 
@@ -655,10 +633,6 @@
                 waMessage += `*Servings:* ${payload.servingSize}%0A`;
                 waMessage += `*Flavour:* ${payload.cakeFlavor}%0A`;
                 waMessage += `*Theme:* ${payload.themeDetails}%0A`;
-
-                if (payload.hasInspirationImage) {
-                    waMessage += `(I have an inspiration image to share!)`;
-                }
 
                 const waUrl = `https://wa.me/${kasiaPhone}?text=${waMessage}`;
 
