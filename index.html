@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Custom celebration cakes in London designed for birthdays, baby showers, weddings, and special occasions. Each cake is handcrafted to order using premium ingredients.">
-    <title>Baked by Kasia | Artisan Cakes in London</title>
+    <meta name="description" content="Custom celebration cakes in London designed for birthdays, baby showers, weddings, and special occasions. Handcrafted bespoke cakes made to order.">
+    <title>Baked by Kasia | Custom Celebration Cakes in London</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
             overflow-x: hidden;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(250, 251, 254, 0.85), rgba(250, 251, 254, 0.95)), url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(250, 251, 254, 0.9), rgba(250, 251, 254, 0.95)), url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -55,24 +55,32 @@
         .image-mask {
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fafbfe; }
+        ::-webkit-scrollbar-thumb { background: #d1c4f5; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c29b46; }
+        
+        /* Custom file upload styling */
+        input[type="file"]::file-selector-button {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: #fdfdfd;
+            transition: 1s;
+            color: #1a1a1a;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
         }
-        ::-webkit-scrollbar-track {
-            background: #fafbfe;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d1c4f5;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c29b46;
+        input[type="file"]::file-selector-button:hover {
+            background-color: #f3f4f6;
         }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-purple selection:text-charcoal relative">
 
-    <!-- Nawigacja -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-4 md:py-6" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="flex items-center z-50">
@@ -80,12 +88,12 @@
             </a>
             
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
-                <a href="#about" class="hover:text-gold transition-colors">About</a>
-                <a href="#creations" class="hover:text-gold transition-colors">Creations</a>
-                <a href="#details" class="hover:text-gold transition-colors">Order Info</a>
-                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+                <a href="#enquiry" class="hover:text-gold transition-colors">Availability</a>
+                <a href="#categories" class="hover:text-gold transition-colors">Categories</a>
+                <a href="#trust" class="hover:text-gold transition-colors">Why Us</a>
+                <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
             </div>
-            <a href="#contact" class="hidden md:inline-block bg-charcoal text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300">Request Quote</a>
+            <a href="#enquiry" class="hidden md:inline-block bg-charcoal text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300">Check Availability</a>
 
             <button id="mobile-menu-btn" class="md:hidden text-charcoal focus:outline-none z-50 relative">
                 <i data-lucide="menu" class="w-8 h-8 transition-transform duration-300"></i>
@@ -93,276 +101,306 @@
         </div>
     </nav>
 
-    <!-- Mobilne Menu -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-lg z-[45] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500">
-        <a href="#about" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">About</a>
-        <a href="#creations" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Creations</a>
-        <a href="#details" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Order Info</a>
-        <a href="#contact" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Contact</a>
-        <a href="#contact" class="mobile-link mt-4 bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg">Request Quote</a>
+        <a href="#enquiry" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Check Availability</a>
+        <a href="#categories" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Categories</a>
+        <a href="#trust" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Why Us</a>
+        <a href="#gallery" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Gallery</a>
     </div>
 
-    <!-- Sekcja Hero -->
+    <!-- Hero Section (Updated for Conversion) -->
     <section class="hero-bg min-h-screen flex items-center pt-28 md:pt-20 relative overflow-hidden">
         <div class="absolute top-20 left-4 md:left-10 w-64 md:w-96 h-64 md:h-96 bg-cyan/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
         <div class="absolute bottom-10 right-4 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-purple/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
         
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div class="hero-text-container space-y-6 md:space-y-8 text-center md:text-left">
-                <p class="hero-el text-gold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm font-bold">Artisan Cakes in London</p>
                 <h1 class="hero-el text-4xl sm:text-5xl md:text-7xl font-serif font-bold leading-tight text-charcoal">
-                    Edible Art for <br>
-                    <span class="italic text-purple">Unforgettable</span><br>
-                    Moments.
+                    Custom Celebration <br>
+                    <span class="italic text-purple">Cakes</span> in London.
                 </h1>
-                <p class="hero-el text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed">
-                    Custom celebration cakes designed for birthdays, baby showers, weddings, and special occasions. Handcrafted to order using premium ingredients.
+                <p class="hero-el text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed font-medium">
+                    Handcrafted birthday, baby shower and bespoke event cakes made to order.<br>
+                    <span class="text-charcoal font-bold mt-2 block">Check availability for your date in under 60 seconds.</span>
                 </p>
-                <div class="hero-el flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pb-4 md:pb-0">
-                    <a href="#contact" class="bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg text-center">Start Your Order</a>
-                    <a href="#creations" class="border border-charcoal text-charcoal px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300 text-center">View Gallery</a>
+                <div class="hero-el flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#enquiry" class="bg-charcoal text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300 shadow-lg text-center font-bold">Check Availability</a>
+                    <a href="#gallery" class="border border-charcoal text-charcoal px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300 text-center">View Cake Gallery</a>
                 </div>
+                <p class="hero-el text-xs md:text-sm text-gray-500 font-medium">
+                    <i data-lucide="clock" class="inline w-4 h-4 mr-1 text-gold"></i> Limited weekly availability. Early booking recommended for weekend dates.
+                </p>
             </div>
             <div class="hero-img-container relative block mt-4 md:mt-0 mb-10 md:mb-0">
                 <div class="absolute inset-0 bg-gold/10 rounded-full blur-3xl scale-90"></div>
-                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=800&auto=format&fit=crop" alt="Elegant tiered cake" class="hero-img relative z-10 w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover image-mask shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=800&auto=format&fit=crop" alt="Bespoke wedding and celebration cakes London" class="hero-img relative z-10 w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover image-mask shadow-2xl">
             </div>
         </div>
     </section>
 
-    <!-- Sekcja O nas -->
-    <section id="about" class="py-16 md:py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <!-- Poprawiony kontener ze zdjęciami: dodany margines dolny dla widoku mobilnego, zmniejszone rozmiary obrazu bezwzględnego -->
-            <div class="gsap-fade-in relative mt-8 md:mt-0 mb-12 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-4/5 md:w-4/5 ml-auto object-cover">
-                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="absolute -bottom-10 left-0 md:-bottom-10 md:-left-10 w-3/5 md:w-1/2 rounded-2xl shadow-2xl border-[6px] md:border-8 border-white object-cover z-10">
-            </div>
-            <div class="gsap-fade-in space-y-6 pt-10 md:pt-0">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal">The Signature Vibe</h2>
-                <div class="w-16 md:w-20 h-1 bg-gold"></div>
-                <p class="text-gray-600 leading-relaxed text-base md:text-lg">
-                    I believe that a cake shouldn't just look like a masterpiece, it should taste like one. Each cake is handcrafted to order using premium ingredients and tailored specifically to your theme, colours, and serving size.
-                </p>
-                <p class="text-gray-600 leading-relaxed text-base md:text-lg">
-                    Clients typically book for children’s birthdays, milestone celebrations, and bespoke events. Because I have very limited weekly availability to ensure quality, early booking is highly recommended—especially for weekend dates.
-                </p>
-                <ul class="space-y-3 md:space-y-4 mt-6">
-                    <li class="flex items-center text-gray-700 text-sm md:text-base">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> 100% Bespoke Designs
-                    </li>
-                    <li class="flex items-center text-gray-700 text-sm md:text-base">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> Premium Ingredients
-                    </li>
-                    <li class="flex items-center text-gray-700 text-sm md:text-base">
-                        <i data-lucide="check-circle-2" class="text-cyan mr-3 w-5 h-5 flex-shrink-0"></i> Inspiration Images Welcome
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja Galeria (9 Placeholderów) -->
-    <section id="creations" class="py-16 md:py-24 bg-purple/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Recent Masterpieces</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">A glimpse into my portfolio of weddings, birthdays, and intricate sweet details.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-                <!-- 9 Elementów galerii -->
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="east_london_birthdayParty.jpg" alt="Wedding Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="guess_my_name_baby_shower.jpg" alt="Birthday Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Details" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Floral Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=600&auto=format&fit=crop" alt="Tiered Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=600&auto=format&fit=crop" alt="Chocolate Drip Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=600&auto=format&fit=crop" alt="Fruit Cake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=600&auto=format&fit=crop" alt="Single Cupcake" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-10 md:mt-12 gsap-fade-up">
-                <a href="https://facebook.com/tortow100" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-charcoal hover:text-gold transition-colors font-bold tracking-widest uppercase text-xs md:text-sm">
-                    View full portfolio on Social Media <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Jasna sekcja Logistics -->
-    <section id="details" class="py-16 md:py-24 bg-white text-charcoal relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-gold/5 rounded-full blur-3xl"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">How It Works</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">To maintain the highest standard of artistry and taste, I operate with strict quality controls.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-gray-100 hover:border-cyan/50 transition-colors bg-base shadow-sm">
-                    <i data-lucide="calendar-clock" class="w-8 h-8 md:w-10 md:h-10 text-cyan mx-auto mb-4"></i>
-                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Advance Booking</h3>
-                    <p class="text-xs md:text-sm text-gray-600">Early booking is highly recommended, especially for weekend dates, to source custom details.</p>
-                </div>
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-gray-100 hover:border-purple/50 transition-colors bg-base shadow-sm">
-                    <i data-lucide="gem" class="w-8 h-8 md:w-10 md:h-10 text-purple mx-auto mb-4"></i>
-                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Quotes Provided</h3>
-                    <p class="text-xs md:text-sm text-gray-600">Accurate quotes are provided after checking your event date, theme, and serving requirements.</p>
-                </div>
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-gold/30 bg-gold/5 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gold text-white text-[9px] md:text-[10px] uppercase font-bold px-2 py-1 rounded-bl-lg">Limited</div>
-                    <i data-lucide="shield-alert" class="w-8 h-8 md:w-10 md:h-10 text-gold mx-auto mb-4"></i>
-                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Weekly Availability</h3>
-                    <p class="text-xs md:text-sm text-gray-600">I have limited weekly availability to ensure 100% dedication to every custom project.</p>
-                </div>
-                <div class="gsap-stagger-item p-6 rounded-2xl border border-gray-100 hover:border-cyan/50 transition-colors bg-base shadow-sm">
-                    <i data-lucide="credit-card" class="w-8 h-8 md:w-10 md:h-10 text-cyan mx-auto mb-4"></i>
-                    <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Secure Your Date</h3>
-                    <p class="text-xs md:text-sm text-gray-600">A deposit is required to lock in your date in my diary and begin the design process.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja Kontakt i Formularz -->
-    <section id="contact" class="py-16 md:py-24 bg-white relative">
+    <!-- Availability Check Form Section (Moved right under Hero) -->
+    <section id="enquiry" class="py-16 md:py-24 bg-white relative">
         <div class="absolute top-0 left-0 w-full h-full bg-cyan/5 -z-10"></div>
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16">
-            <div class="gsap-fade-in text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4 md:mb-6">Let's Create Something Beautiful</h2>
-                <p class="text-gray-600 mb-8 text-sm md:text-base">Ready to start? Send a message with your date, portions needed, theme ideas, and delivery postcode. I'll get back to you with a tailored quote.</p>
-                
-                <div class="space-y-6 text-left">
-                    <div class="flex items-start">
-                        <i data-lucide="map-pin" class="w-5 h-5 md:w-6 md:h-6 text-gold mr-4 mt-1 flex-shrink-0"></i>
-                        <div>
-                            <h4 class="font-bold text-charcoal text-sm md:text-base">Location & Collection</h4>
-                            <p class="text-gray-600 text-xs md:text-sm">6 Oaks Lane, Newbury Park, IG2 7PL, London</p>
-                            <p class="text-gray-500 text-xs md:text-sm mt-1">Collection available from my London location. Please arrange a time when confirming your order.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <i data-lucide="phone" class="w-5 h-5 md:w-6 md:h-6 text-gold mr-4 flex-shrink-0"></i>
-                        <div>
-                            <h4 class="font-bold text-charcoal text-sm md:text-base">Phone / WhatsApp</h4>
-                            <a href="tel:07427669677" class="text-gray-600 text-xs md:text-sm hover:text-gold transition-colors">07427 669677</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6 text-purple mr-4 flex-shrink-0"></i>
-                        <div>
-                            <h4 class="font-bold text-charcoal text-sm md:text-base">Follow Me</h4>
-                            <a href="https://www.instagram.com/baked_by_kasia" target="_blank" class="text-gray-600 text-xs md:text-sm hover:text-gold transition-colors">@baked_by_kasia</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="gsap-fade-up text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Check if your date is still available</h2>
+                <p class="text-gray-600 text-sm md:text-base">I take a limited number of orders each week to ensure premium quality. Fill out the form below to secure your spot.</p>
             </div>
             
-            <div class="gsap-fade-in bg-white p-6 md:p-8 rounded-2xl shadow-[0_0_40px_rgba(209,196,245,0.3)] border border-purple/20">
-                <h3 class="text-2xl font-serif font-bold text-charcoal mb-6 text-center md:text-left">Request a Quote</h3>
-                
-                <form id="quote-form" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="gsap-fade-in bg-white p-6 md:p-10 rounded-3xl shadow-[0_0_50px_rgba(209,196,245,0.4)] border border-purple/20">
+                <form id="availability-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Name</label>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Name</label>
                             <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Date</label>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Date</label>
                             <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Email</label>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Email</label>
                             <input type="email" id="clientEmail" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
-                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Phone Number (WhatsApp)</label>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Phone Number</label>
                             <input type="tel" id="clientPhone" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
-                    <div>
-                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Serving Size</label>
-                        <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
-                            <option value="10-20 Portions">10-20 Portions</option>
-                            <option value="20-40 Portions">20-40 Portions</option>
-                            <option value="40-80 Portions">40-80 Portions</option>
-                            <option value="80+ Portions">80+ Portions</option>
-                        </select>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Type</label>
+                            <select id="eventType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
+                                <option value="Birthday">Birthday</option>
+                                <option value="Kids Birthday">Kids Birthday</option>
+                                <option value="Baby Shower">Baby Shower</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Other">Other Celebration</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Number of Servings</label>
+                            <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
+                                <option value="10-20 Portions">10-20 Portions</option>
+                                <option value="20-40 Portions">20-40 Portions</option>
+                                <option value="40-80 Portions">40-80 Portions</option>
+                                <option value="80+ Portions">80+ Portions</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Budget Range</label>
+                            <select id="budgetRange" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
+                                <option value="£80–£150">£80–£150</option>
+                                <option value="£150–£300">£150–£300</option>
+                                <option value="£300+">£300+</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Event Type</label>
-                        <select id="eventType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
-                            <option value="Children's Birthday">Children's Birthday</option>
-                            <option value="Milestone Celebration">Milestone Celebration</option>
-                            <option value="Baby Shower">Baby Shower</option>
-                            <option value="Wedding">Wedding</option>
-                            <option value="Other Event">Other Event</option>
-                        </select>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Inspiration Image (Optional)</label>
+                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Collection Postcode</label>
+                            <input type="text" id="postcode" placeholder="e.g. IG2 7PL" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-1">Theme, Colours & Ideas (Links welcome)</label>
-                        <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Describe your vision..."></textarea>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold transition-colors duration-300 shadow-xl text-sm mt-4">Check Availability</button>
+                    
+                    <!-- Pricing Expectation -->
+                    <div class="bg-gray-50 p-4 rounded-lg mt-6 border border-gray-100 text-center">
+                        <p class="text-xs md:text-sm text-gray-600 font-medium">
+                            <i data-lucide="info" class="inline w-4 h-4 mr-1 text-gold"></i> Most custom cakes range between £120–£300 depending on size and design complexity.
+                        </p>
                     </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gold transition-colors duration-300 shadow-md text-sm mt-2">Get a Quote</button>
-                    <p class="text-[10px] md:text-xs text-center text-gray-500 mt-2">Quotes provided based on availability and design requirements.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Stopka -->
-    <footer class="bg-charcoal text-white/50 text-center py-8 md:py-10 text-xs md:text-sm border-t border-white/10">
+    <!-- Trust Positioning Section -->
+    <section id="trust" class="py-16 md:py-24 bg-charcoal text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-gold/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 md:w-64 h-48 md:h-64 bg-purple/10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Why clients choose Baked by Kasia</h2>
+                <div class="w-16 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="gsap-stagger-item flex flex-col items-center p-4">
+                    <i data-lucide="pen-tool" class="w-8 h-8 text-gold mb-4"></i>
+                    <h3 class="font-bold text-sm md:text-base mb-2">Handcrafted bespoke cake designs</h3>
+                </div>
+                <div class="gsap-stagger-item flex flex-col items-center p-4">
+                    <i data-lucide="palette" class="w-8 h-8 text-cyan mb-4"></i>
+                    <h3 class="font-bold text-sm md:text-base mb-2">Made to match your theme and colours</h3>
+                </div>
+                <div class="gsap-stagger-item flex flex-col items-center p-4">
+                    <i data-lucide="star" class="w-8 h-8 text-purple mb-4"></i>
+                    <h3 class="font-bold text-sm md:text-base mb-2">Premium finishes and attention to detail</h3>
+                </div>
+                <div class="gsap-stagger-item flex flex-col items-center p-4">
+                    <i data-lucide="map-pin" class="w-8 h-8 text-gold mb-4"></i>
+                    <h3 class="font-bold text-sm md:text-base mb-2">Collection available from London location</h3>
+                </div>
+                <div class="gsap-stagger-item flex flex-col items-center p-4 sm:col-span-2 md:col-span-1">
+                    <i data-lucide="shield-alert" class="w-8 h-8 text-cyan mb-4"></i>
+                    <h3 class="font-bold text-sm md:text-base mb-2">Limited number of cakes accepted each week</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Category Navigation -->
+    <section id="categories" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Bespoke Cakes for Every Occasion</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Specializing in custom celebration cakes London clients love.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Category 1 -->
+                <div class="gsap-fade-in group relative overflow-hidden rounded-2xl shadow-lg h-80 flex items-end">
+                    <img src="https://images.unsplash.com/photo-1562777717-b6aff3453b3b?q=80&w=800&auto=format&fit=crop" alt="Birthday cakes London" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+                    <div class="relative z-10 w-full p-8 flex justify-between items-end">
+                        <h3 class="text-white font-serif text-3xl font-bold">Birthday Cakes</h3>
+                        <a href="#enquiry" class="bg-white/20 hover:bg-gold backdrop-blur-sm text-white px-4 py-2 rounded-lg text-xs uppercase font-bold tracking-wider transition-colors border border-white/30">Request similar cake</a>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="gsap-fade-in group relative overflow-hidden rounded-2xl shadow-lg h-80 flex items-end">
+                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=800&auto=format&fit=crop" alt="Kids birthday cakes London" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+                    <div class="relative z-10 w-full p-8 flex justify-between items-end">
+                        <h3 class="text-white font-serif text-3xl font-bold">Kids Cakes</h3>
+                        <a href="#enquiry" class="bg-white/20 hover:bg-gold backdrop-blur-sm text-white px-4 py-2 rounded-lg text-xs uppercase font-bold tracking-wider transition-colors border border-white/30">Request similar cake</a>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="gsap-fade-in group relative overflow-hidden rounded-2xl shadow-lg h-80 flex items-end">
+                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=800&auto=format&fit=crop" alt="Baby shower cakes London" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+                    <div class="relative z-10 w-full p-8 flex justify-between items-end">
+                        <h3 class="text-white font-serif text-3xl font-bold">Baby Shower Cakes</h3>
+                        <a href="#enquiry" class="bg-white/20 hover:bg-gold backdrop-blur-sm text-white px-4 py-2 rounded-lg text-xs uppercase font-bold tracking-wider transition-colors border border-white/30">Request similar cake</a>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div class="gsap-fade-in group relative overflow-hidden rounded-2xl shadow-lg h-80 flex items-end">
+                    <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=800&auto=format&fit=crop" alt="Bespoke wedding cakes London" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+                    <div class="relative z-10 w-full p-8 flex justify-between items-end">
+                        <h3 class="text-white font-serif text-3xl font-bold">Wedding Cakes</h3>
+                        <a href="#enquiry" class="bg-white/20 hover:bg-gold backdrop-blur-sm text-white px-4 py-2 rounded-lg text-xs uppercase font-bold tracking-wider transition-colors border border-white/30">Request similar cake</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 md:py-24 bg-purple/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16 gsap-fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Design Portfolio</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Explore recent celebration cakes London clients have requested.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+                <!-- 9 Elementów galerii - SEO optimized Alts -->
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=600&auto=format&fit=crop" alt="Elegant bespoke wedding cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1562777717-b6aff3453b3b?q=80&w=600&auto=format&fit=crop" alt="Pink custom birthday cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Pastel baby shower cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Floral bespoke cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Custom cupcakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+                <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=600&auto=format&fit=crop" alt="Tiered celebration cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Credibility Section -->
+    <section class="py-16 md:py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-serif font-bold text-charcoal mb-8 gsap-fade-up">See latest cake designs on Instagram</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <!-- Mocking the Instagram feed with uploads -->
+                <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square">
+                    <img src="IMG_3172.jpg" alt="Baby shower cake Instagram" onerror="this.src='https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=400&fit=crop'" class="w-full h-full object-cover">
+                </div>
+                <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square">
+                    <img src="IMG_3171.jpg" alt="Halloween cake Instagram" onerror="this.src='https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=400&fit=crop'" class="w-full h-full object-cover">
+                </div>
+                <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=400&auto=format&fit=crop" alt="Cupcake Instagram" class="w-full h-full object-cover">
+                </div>
+                <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=400&auto=format&fit=crop" alt="Kids cake Instagram" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <a href="https://www.instagram.com/baked_by_kasia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-charcoal text-charcoal px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300">
+                <i data-lucide="instagram" class="w-5 h-5 mr-2"></i> Message on Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Final Call To Action -->
+    <section class="py-20 md:py-32 bg-purple/10 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-cyan/5 blur-3xl"></div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10 gsap-fade-up">
+            <h2 class="text-4xl md:text-6xl font-serif font-bold text-charcoal mb-6">Planning a celebration soon?</h2>
+            <p class="text-gray-600 mb-10 text-lg">Send an enquiry to check my diary. I aim to respond to all quotes within 24 hours.</p>
+            <a href="#enquiry" class="bg-gold text-white px-10 py-5 rounded-full text-base uppercase tracking-widest hover:bg-charcoal transition-colors duration-300 shadow-xl font-bold inline-block">Check availability now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white/50 text-center py-8 md:py-10 text-xs md:text-sm">
         <p>&copy; 2026 Baked_by_Kasia LTD. All rights reserved.</p>
-        <p class="mt-2 md:mt-3 text-[10px] md:text-xs tracking-wider">
+        <p class="mt-2 text-[10px] md:text-xs tracking-wider">
             Designed & Automated by <a href="https://roofflowai.co.uk/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors underline decoration-white/30 underline-offset-4">RoofflowAI</a>
         </p>
     </footer>
@@ -377,11 +415,11 @@
         </div>
     </div>
 
-    <!-- Skrypty i Logika -->
+    <!-- Scripts -->
     <script>
         lucide.createIcons();
 
-        // Lightbox
+        // Lightbox Logic
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
@@ -418,7 +456,7 @@
             if (e.target !== lightboxImg) closeLightbox();
         });
 
-        // Mobilne Menu
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = mobileMenuBtn.querySelector('i');
@@ -448,14 +486,14 @@
             });
         });
 
-        // Formularz Webhook n8n + Awaryjne przekierowanie WhatsApp
-        document.getElementById('quote-form').addEventListener('submit', async (e) => {
+        // Form Webhook Logic with Fallback
+        document.getElementById('availability-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerText;
             
-            submitBtn.innerText = 'Sending...';
+            submitBtn.innerText = 'Checking...';
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
 
@@ -464,23 +502,25 @@
                 email: document.getElementById('clientEmail').value,
                 phone: document.getElementById('clientPhone').value,
                 eventDate: document.getElementById('eventDate').value,
-                servingSize: document.getElementById('servingSize').value,
                 eventType: document.getElementById('eventType').value,
-                themeDetails: document.getElementById('themeDetails').value,
+                servingSize: document.getElementById('servingSize').value,
+                budgetRange: document.getElementById('budgetRange').value,
+                postcode: document.getElementById('postcode').value,
+                // Note: File input requires Base64 conversion or multipart/form-data for n8n.
+                // Sending filename just as a placeholder for this JSON payload.
+                hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
 
             try {
                 const response = await fetch('https://primary-production-58a3.up.railway.app/webhook/22778059-d7fa-4a84-8bbd-8e4050503c7a', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
                 if (response.ok) {
-                    submitBtn.innerText = 'Request Sent Successfully!';
+                    submitBtn.innerText = 'Availability Request Sent!';
                     submitBtn.classList.replace('bg-charcoal', 'bg-green-600');
                     submitBtn.classList.replace('hover:bg-gold', 'hover:bg-green-700');
                     e.target.reset(); 
@@ -495,23 +535,22 @@
                 
                 const kasiaPhone = "447427669677"; 
                 
-                let waMessage = `Hi Kasia! I tried using your website form, but it seems there was a hiccup. Here are my cake requirements:%0A%0A`;
+                let waMessage = `Hi Kasia! I'm checking availability for a cake:%0A%0A`;
                 waMessage += `*Name:* ${payload.name}%0A`;
-                waMessage += `*Email:* ${payload.email}%0A`;
-                waMessage += `*Phone:* ${payload.phone}%0A`;
                 waMessage += `*Date:* ${payload.eventDate}%0A`;
-                waMessage += `*Size:* ${payload.servingSize}%0A`;
                 waMessage += `*Event:* ${payload.eventType}%0A`;
-                if(payload.themeDetails) {
-                    waMessage += `*Details:* ${payload.themeDetails}%0A`;
+                waMessage += `*Servings:* ${payload.servingSize}%0A`;
+                waMessage += `*Budget:* ${payload.budgetRange}%0A`;
+                waMessage += `*Postcode:* ${payload.postcode}%0A`;
+                if(payload.hasInspirationImage) {
+                    waMessage += `(I have an inspiration image to share!)`;
                 }
                 
                 const waUrl = `https://wa.me/${kasiaPhone}?text=${waMessage}`;
                 
                 setTimeout(() => {
                     window.open(waUrl, '_blank');
-                    
-                    submitBtn.innerText = 'Request Sent (via WhatsApp)';
+                    submitBtn.innerText = 'Sent via WhatsApp';
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
                     submitBtn.classList.replace('bg-purple', 'bg-green-600');
@@ -520,7 +559,7 @@
             }
         });
 
-        // Animacje GSAP
+        // GSAP Animations
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -553,7 +592,6 @@
 
             const heroTimeline = gsap.timeline();
             heroTimeline.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" });
-            
             heroTimeline.from(".hero-img", { scale: 1.1, opacity: 0, duration: 1.2, ease: "power2.out" }, "-=1");
 
             gsap.utils.toArray('.gsap-fade-in').forEach(element => {
@@ -564,8 +602,8 @@
                 gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%" }, y: 30, opacity: 0, duration: 0.6, ease: "power2.out" });
             });
 
-            gsap.from('.gsap-gallery-item', { scrollTrigger: { trigger: "#creations", start: "top 75%" }, y: 50, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.2, ease: "power2.out" });
-            gsap.from('.gsap-stagger-item', { scrollTrigger: { trigger: "#details", start: "top 75%" }, y: 30, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.15, ease: "power2.out" });
+            gsap.from('.gsap-gallery-item', { scrollTrigger: { trigger: "#gallery", start: "top 75%" }, y: 50, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.2, ease: "power2.out" });
+            gsap.from('.gsap-stagger-item', { scrollTrigger: { trigger: "#trust", start: "top 75%" }, y: 30, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.15, ease: "power2.out" });
         });
     </script>
 </body>
