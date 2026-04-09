@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -134,9 +133,10 @@
     <!-- Sekcja O nas -->
     <section id="about" class="py-16 md:py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div class="gsap-fade-in relative mt-8 md:mt-0">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-full md:w-4/5 ml-auto">
-                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="absolute -bottom-6 -left-4 md:-bottom-10 md:-left-10 w-2/3 md:w-1/2 rounded-2xl shadow-2xl border-4 md:border-8 border-white">
+            <!-- Poprawiony kontener ze zdjęciami: dodany margines dolny dla widoku mobilnego, zmniejszone rozmiary obrazu bezwzględnego -->
+            <div class="gsap-fade-in relative mt-8 md:mt-0 mb-12 md:mb-0">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Detail of cake decoration" class="rounded-2xl shadow-xl w-4/5 md:w-4/5 ml-auto object-cover">
+                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="absolute -bottom-10 left-0 md:-bottom-10 md:-left-10 w-3/5 md:w-1/2 rounded-2xl shadow-2xl border-[6px] md:border-8 border-white object-cover z-10">
             </div>
             <div class="gsap-fade-in space-y-6 pt-10 md:pt-0">
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal">The Signature Vibe</h2>
@@ -236,7 +236,7 @@
         </div>
     </section>
 
-    <!-- Zaktualizowana, jasna sekcja Logistics -->
+    <!-- Jasna sekcja Logistics -->
     <section id="details" class="py-16 md:py-24 bg-white text-charcoal relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-gold/5 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -533,15 +533,19 @@
                     nav.classList.remove("py-4", "md:py-6");
                     nav.classList.add("py-2");
                     
-                    brandText.classList.remove("text-2xl", "md:text-3xl");
-                    brandText.classList.add("text-xl", "md:text-2xl");
+                    if(brandText) {
+                        brandText.classList.remove("text-2xl", "md:text-3xl");
+                        brandText.classList.add("text-xl", "md:text-2xl");
+                    }
                 } else {
                     nav.classList.remove("bg-white/95", "backdrop-blur-md", "shadow-sm");
                     nav.classList.add("py-4", "md:py-6");
                     nav.classList.remove("py-2");
                     
-                    brandText.classList.remove("text-xl", "md:text-2xl");
-                    brandText.classList.add("text-2xl", "md:text-3xl");
+                    if(brandText) {
+                        brandText.classList.remove("text-xl", "md:text-2xl");
+                        brandText.classList.add("text-2xl", "md:text-3xl");
+                    }
                 }
             });
 
@@ -550,7 +554,6 @@
             const heroTimeline = gsap.timeline();
             heroTimeline.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" });
             
-            // Animacja obrazka niezależnie od urządzenia, ponieważ teraz jest widoczny wszędzie
             heroTimeline.from(".hero-img", { scale: 1.1, opacity: 0, duration: 1.2, ease: "power2.out" }, "-=1");
 
             gsap.utils.toArray('.gsap-fade-in').forEach(element => {
@@ -567,6 +570,3 @@
     </script>
 </body>
 </html>
-
-
-```
