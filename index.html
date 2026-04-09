@@ -242,6 +242,10 @@
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Theme or Occasion</label>
                             <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Tell me about the birthday, theme, colours, etc." required></textarea>
                         </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Upload Inspiration Image (Optional)</label>
+                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
+                        </div>
                     </div>
 
                     <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold transition-colors duration-300 shadow-xl text-sm mt-4">
@@ -600,23 +604,23 @@
                 servingSize: document.getElementById('servingSize').value,
                 cakeFlavor: document.getElementById('cakeFlavor').value,
                 themeDetails: document.getElementById('themeDetails').value,
-                hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
 
-            // Pakujemy payload i plik binarny do FormData
             const formData = new FormData();
             Object.keys(payload).forEach(key => formData.append(key, payload[key]));
             
             const imageInput = document.getElementById('inspirationImage');
-            if (payload.hasInspirationImage) {
+            const hasInspirationImage = imageInput.files.length > 0;
+            formData.append('hasInspirationImage', hasInspirationImage);
+            
+            if (hasInspirationImage) {
                 formData.append('inspiration_image', imageInput.files[0]);
             }
 
             try {
                 const response = await fetch('https://primary-production-58a3.up.railway.app/webhook/22778059-d7fa-4a84-8bbd-8e4050503c7a', {
                     method: 'POST',
-                    // Usuwamy nagłówek Content-Type - przy FormData przeglądarka ustawi go automatycznie
                     body: formData
                 });
 
@@ -643,6 +647,10 @@
                 waMessage += `*Servings:* ${payload.servingSize}%0A`;
                 waMessage += `*Flavour:* ${payload.cakeFlavor}%0A`;
                 waMessage += `*Theme:* ${payload.themeDetails}%0A`;
+
+                if (hasInspirationImage) {
+                    waMessage += `%0A(I have an inspiration image to share!)`;
+                }
 
                 const waUrl = `https://wa.me/${kasiaPhone}?text=${waMessage}`;
 
