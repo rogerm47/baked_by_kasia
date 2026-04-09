@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Custom celebration cakes and cupcakes in East London. Handcrafted birthday, baby shower, and event cakes. Collection from IG2.">
     <title>Baked by Kasia | Custom Celebration Cakes in East London</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,14 +32,12 @@
             }
         }
     </script>
-
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         body {
             background-color: #fafbfe;
@@ -47,7 +45,7 @@
             overflow-x: hidden;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(250, 251, 254, 0.9), rgba(250, 251, 254, 0.95)), url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(250, 251, 254, 0.9), rgba(250, 251, 254, 0.95)), url('custom-cakes-ilford.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -59,7 +57,7 @@
         ::-webkit-scrollbar-track { background: #fafbfe; }
         ::-webkit-scrollbar-thumb { background: #d1c4f5; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #c29b46; }
-        
+
         input[type="file"]::file-selector-button {
             border: 1px solid #e5e7eb;
             padding: 0.5rem 1rem;
@@ -78,7 +76,6 @@
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-purple selection:text-charcoal relative">
-
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-4 md:py-6" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -86,7 +83,7 @@
                 <span id="brand-text" class="text-2xl md:text-3xl font-serif font-bold text-charcoal tracking-wider transition-all duration-500">Baked by Kasia.</span>
                 <span class="text-[10px] text-gold uppercase tracking-widest font-bold mt-1">Love at First Bite</span>
             </a>
-            
+
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
                 <a href="#enquiry" class="hover:text-gold transition-colors">Availability</a>
                 <a href="#about" class="hover:text-gold transition-colors">About</a>
@@ -94,13 +91,11 @@
                 <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
             </div>
             <a href="#enquiry" class="hidden md:inline-block bg-charcoal text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-gold transition-colors duration-300">Check Availability</a>
-
             <button id="mobile-menu-btn" class="md:hidden text-charcoal focus:outline-none z-50 relative">
                 <i data-lucide="menu" class="w-8 h-8 transition-transform duration-300"></i>
             </button>
         </div>
     </nav>
-
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-lg z-[45] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500">
         <a href="#enquiry" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Check Availability</a>
@@ -108,19 +103,18 @@
         <a href="#flavours" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Flavours</a>
         <a href="#gallery" class="mobile-link text-2xl font-serif text-charcoal hover:text-gold transition-colors">Gallery</a>
     </div>
-
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center pt-28 md:pt-20 relative overflow-hidden">
         <div class="absolute top-20 left-4 md:left-10 w-64 md:w-96 h-64 md:h-96 bg-cyan/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
         <div class="absolute bottom-10 right-4 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-purple/20 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
-        
+
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div class="hero-text-container space-y-6 md:space-y-8 text-center md:text-left">
                 <h1 class="hero-el text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight text-charcoal">
                     Custom Celebration Cakes & Cupcakes in <span class="italic text-purple">East London</span>.
                 </h1>
                 <p class="hero-el text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed font-medium">
-                    Handcrafted birthday cakes, cupcakes and dessert treats made to order for children’s parties, family celebrations and special occasions.<br><br>
+                    Handcrafted birthday cakes, cupcakes and dessert treats made to order for children's parties, family celebrations and special occasions.<br><br>
                     <span class="text-charcoal font-bold block">Collection from IG2 postcode. Check availability for your date in under 60 seconds.</span>
                 </p>
                 <div class="hero-el flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -133,11 +127,10 @@
             </div>
             <div class="hero-img-container relative block mt-4 md:mt-0 mb-10 md:mb-0">
                 <div class="absolute inset-0 bg-gold/10 rounded-full blur-3xl scale-90"></div>
-                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=800&auto=format&fit=crop" alt="Beautiful custom cakes IG2" class="hero-img relative z-10 w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover image-mask shadow-2xl">
+                <img src="bespoke-cakes-stratford.jpg" alt="Custom celebration cakes Ilford IG2 East London" class="hero-img relative z-10 w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover image-mask shadow-2xl">
             </div>
         </div>
     </section>
-
     <!-- Collection Clarification Bar -->
     <section class="bg-charcoal text-white py-6 md:py-8 relative z-20">
         <div class="max-w-7xl mx-auto px-6">
@@ -165,7 +158,6 @@
             </div>
         </div>
     </section>
-
     <!-- Availability Check Form Section -->
     <section id="enquiry" class="py-16 md:py-24 bg-white relative">
         <div class="absolute top-0 left-0 w-full h-full bg-cyan/5 -z-10"></div>
@@ -174,35 +166,35 @@
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Check if your date is still available</h2>
                 <p class="text-gray-600 text-sm md:text-base">Fill out the form below to secure your spot for celebration cakes East London families trust.</p>
             </div>
-            
+
             <div class="gsap-fade-in bg-white p-6 md:p-10 rounded-3xl shadow-[0_0_50px_rgba(209,196,245,0.4)] border border-purple/20">
                 <form id="availability-form" class="space-y-6">
-                    
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Name</label>
-                            <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" required>
+                            <input type="text" id="clientName" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Event Date</label>
-                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" required>
+                            <input type="date" id="eventDate" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Email</label>
-                            <input type="email" id="clientEmail" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" required>
+                            <input type="email" id="clientEmail" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Phone Number</label>
-                            <input type="tel" id="clientPhone" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" required>
+                            <input type="tel" id="clientPhone" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Product Type (Optional)</label>
-                            <select id="productType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900">
+                            <select id="productType" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
                                 <option value="Not Sure Yet">Not sure yet</option>
                                 <option value="Celebration Cake">Celebration Cake</option>
                                 <option value="Cupcakes">Cupcakes</option>
@@ -212,7 +204,7 @@
                         </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Number of Servings</label>
-                            <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900">
+                            <select id="servingSize" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm">
                                 <option value="Under 10">Under 10</option>
                                 <option value="10-20 Portions">10-20 Portions</option>
                                 <option value="20-40 Portions">20-40 Portions</option>
@@ -220,27 +212,25 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="grid grid-cols-1 gap-6">
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Cake Flavour</label>
-                            <input type="text" id="cakeFlavor" placeholder="e.g. Red Velvet, Oreo Chocolate..." class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" required>
+                            <input type="text" id="cakeFlavor" placeholder="e.g. Red Velvet, Oreo Chocolate..." class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" required>
                         </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Theme or Occasion</label>
-                            <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900" placeholder="Tell me about the birthday, theme, colours, etc." required></textarea>
+                            <textarea id="themeDetails" rows="3" class="w-full px-4 py-3 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm" placeholder="Tell me about the birthday, theme, colours, etc." required></textarea>
                         </div>
                         <div>
                             <label class="block text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Upload Inspiration Image (Optional)</label>
-                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-900">
+                            <input type="file" id="inspirationImage" accept="image/*" class="w-full px-2 py-2 rounded-lg bg-base border border-gray-100 focus:ring-2 focus:ring-purple outline-none transition-all text-sm text-gray-500">
                         </div>
                     </div>
-
                     <button type="submit" id="submitBtn" class="w-full bg-charcoal text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold transition-colors duration-300 shadow-xl text-sm mt-4">Check Availability</button>
-                    
+
                     <!-- Minimum Order Expectation -->
                     <div class="bg-rose-50 p-5 rounded-xl mt-6 border border-rose-100 text-center flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
-                        <i data-lucide="info" class="w-5 h-5 text-rose-500 flex-shrink-0"></i> 
+                        <i data-lucide="info" class="w-5 h-5 text-rose-500 flex-shrink-0"></i>
                         <p class="text-xs md:text-sm text-gray-700 font-medium">
                             <strong class="text-charcoal">Minimum order applies:</strong> 6 cupcakes, 10 cake pops, or one bento cake.
                         </p>
@@ -249,16 +239,15 @@
             </div>
         </div>
     </section>
-
     <!-- Meet The Baker Section -->
     <section id="about" class="py-16 md:py-24 bg-base relative">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div class="gsap-fade-in relative mt-8 md:mt-0 mb-12 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop" alt="Kasia baking custom cakes" class="rounded-2xl shadow-xl w-4/5 md:w-4/5 ml-auto object-cover aspect-[4/5]">
-                <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Kids birthday cakes London" class="absolute -bottom-10 left-0 md:-bottom-10 md:-left-10 w-3/5 md:w-1/2 rounded-2xl shadow-2xl border-[6px] md:border-8 border-base object-cover z-10 aspect-square">
+                <img src="kasia.JPEG" alt="Kasia — cake designer and baker based in Ilford East London IG2" class="rounded-2xl shadow-xl w-4/5 md:w-4/5 ml-auto object-cover aspect-[4/5]">
+                <img src="cake-shop-goodmayes.jpg" alt="Birthday cakes Barkingside handcrafted by Baked by Kasia" class="absolute -bottom-10 left-0 md:-bottom-10 md:-left-10 w-3/5 md:w-1/2 rounded-2xl shadow-2xl border-[6px] md:border-8 border-base object-cover z-10 aspect-square">
             </div>
             <div class="gsap-fade-in space-y-6 pt-10 md:pt-0">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal">Hi, I’m Kasia — the cake designer behind Baked by Kasia.</h2>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal">Hi, I'm Kasia — the cake designer behind Baked by Kasia.</h2>
                 <div class="w-16 md:w-20 h-1 bg-gold"></div>
                 <p class="text-gray-600 leading-relaxed text-base md:text-lg">
                     I create custom celebration cakes, cupcakes and dessert treats for birthdays and family events across East London. Each order is made to match your theme, colours and occasion.
@@ -275,7 +264,6 @@
             </div>
         </div>
     </section>
-
     <!-- Trust Positioning Section -->
     <section id="trust" class="py-16 md:py-24 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -283,7 +271,6 @@
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Why clients choose Baked by Kasia</h2>
                 <div class="w-16 h-1 bg-gold mx-auto"></div>
             </div>
-
             <div class="max-w-4xl mx-auto">
                 <ul class="space-y-6">
                     <li class="flex items-start gsap-stagger-item bg-base p-6 rounded-2xl border border-gray-100 shadow-sm">
@@ -301,7 +288,7 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-lg text-charcoal mb-1">Popular with local families</h3>
-                            <p class="text-gray-600 text-sm">Trusted by East London families and children’s birthday parties.</p>
+                            <p class="text-gray-600 text-sm">Trusted by East London families and children's birthday parties.</p>
                         </div>
                     </li>
                     <li class="flex items-start gsap-stagger-item bg-base p-6 rounded-2xl border border-gray-100 shadow-sm">
@@ -335,16 +322,14 @@
             </div>
         </div>
     </section>
-
     <!-- Popular Flavours Section -->
     <section id="flavours" class="py-16 md:py-24 bg-charcoal text-white relative">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=2000&auto=format&fit=crop')] opacity-5 bg-cover bg-center bg-fixed"></div>
+        <div class="absolute inset-0 bg-[url('cake-shop-ilford-ig2.jpg')] opacity-5 bg-cover bg-center bg-fixed"></div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="text-center mb-12 md:mb-16 gsap-fade-up">
                 <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Popular cake flavours</h2>
                 <div class="w-16 h-1 bg-gold mx-auto"></div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                 <div class="gsap-fade-in flex items-center p-4 border-b border-white/10">
                     <i data-lucide="utensils" class="w-5 h-5 text-gold mr-4"></i>
@@ -367,7 +352,7 @@
                     <span class="text-lg font-serif">Lemon Coconut Mascarpone</span>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12 gsap-fade-up">
                 <p class="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-sm uppercase tracking-widest font-bold text-gold border border-white/20">
                     Custom flavours available on request
@@ -375,7 +360,6 @@
             </div>
         </div>
     </section>
-
     <!-- Gallery Section -->
     <section id="gallery" class="py-16 md:py-24 bg-base">
         <div class="max-w-7xl mx-auto px-6">
@@ -383,41 +367,40 @@
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Design Portfolio</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Explore recent custom celebration cakes East London clients have requested.</p>
             </div>
-            
+
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-                <!-- 6 Elementów galerii - SEO optimized Alts -->
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=600&auto=format&fit=crop" alt="Elegant bespoke cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="bespoke-wedding-cake-gants-hill.jpg" alt="Bespoke wedding cake Gants Hill East London IG2" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1562777717-b6aff3453b3b?q=80&w=600&auto=format&fit=crop" alt="Pink custom birthday cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="birthday-cake-ilford.jpg" alt="Custom birthday cake Ilford IG2 East London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=600&auto=format&fit=crop" alt="Pastel baby shower cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="celebration-cakes-redbridge.jpg" alt="Celebration cakes Redbridge East London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Floral bespoke cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="bespoke-cakes-goodmayes-ig3.jpg" alt="Bespoke cakes Goodmayes IG3 East London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?q=80&w=600&auto=format&fit=crop" alt="Cupcakes East London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="custom-birthday-cake-redbridge.jpg" alt="Custom birthday cake Redbridge East London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
                 </div>
                 <div class="gsap-gallery-item group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=600&auto=format&fit=crop" alt="Tiered celebration cakes London" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="wedding-cake-stratford-east-london.jpg" alt="Wedding cake Stratford East London E15" class="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="text-white w-8 h-8 opacity-80"></i>
                     </div>
@@ -425,40 +408,37 @@
             </div>
         </div>
     </section>
-
     <!-- Instagram Credibility Section -->
     <section class="py-16 md:py-24 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-2xl md:text-3xl font-serif font-bold text-charcoal mb-8 gsap-fade-up">See latest cake designs on Instagram</h2>
-            
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                 <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square">
-                    <img src="IMG_3172.jpg" alt="Baby shower cake Instagram" onerror="this.src='https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=400&fit=crop'" class="w-full h-full object-cover">
+                    <img src="wedding-cake-goodmayes-east-london.jpg" alt="Baby shower cake Ilford IG2 — Baked by Kasia" class="w-full h-full object-cover">
                 </div>
                 <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square">
-                    <img src="IMG_3171.jpg" alt="Halloween cake Instagram" onerror="this.src='https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=400&fit=crop'" class="w-full h-full object-cover">
+                    <img src="custom-cakes-gants-hill-ig2.jpg" alt="Halloween celebration cake East London — Baked by Kasia" class="w-full h-full object-cover">
                 </div>
                 <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=400&auto=format&fit=crop" alt="Cupcake Instagram East London" class="w-full h-full object-cover">
+                    <img src="custom-celebration-cake-ilford-ig2.jpg" alt="Custom celebration cake Ilford IG2 East London" class="w-full h-full object-cover">
                 </div>
                 <div class="gsap-fade-in rounded-xl overflow-hidden shadow-sm aspect-square hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=400&auto=format&fit=crop" alt="Birthday cakes London IG" class="w-full h-full object-cover">
+                    <img src="cake-shop-seven-kings.jpg" alt="Cake shop Seven Kings East London IG3" class="w-full h-full object-cover">
                 </div>
             </div>
-
             <a href="https://www.instagram.com/baked_by_kasia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-charcoal text-charcoal px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-charcoal hover:text-white transition-colors duration-300">
                 <i data-lucide="instagram" class="w-5 h-5 mr-2"></i> Message on Instagram
             </a>
         </div>
     </section>
-
     <!-- Scarcity & Final Call To Action -->
     <section class="py-20 md:py-32 bg-purple/10 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-cyan/5 blur-3xl"></div>
         <div class="max-w-3xl mx-auto px-6 relative z-10 gsap-fade-up">
 
             <div class="inline-block bg-white px-6 py-2 rounded-full shadow-sm mb-8 border border-purple/20">
-                <p class="text-sm md:text-base text-gray-900 font-bold">
+                <p class="text-sm md:text-base text-charcoal font-medium">
                     <i data-lucide="alert-circle" class="inline w-4 h-4 mr-1 text-gold"></i> Limited number of celebration cake orders accepted each week. Weekend dates fill quickly.
                 </p>
             </div>
@@ -466,7 +446,6 @@
             <a href="#enquiry" class="bg-gold text-white px-10 py-5 rounded-full text-base uppercase tracking-widest hover:bg-charcoal transition-colors duration-300 shadow-xl font-bold inline-block">Check availability now</a>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-charcoal text-white/50 text-center py-8 md:py-10 text-xs md:text-sm">
         <p>&copy; 2026 Baked_by_Kasia LTD. All rights reserved.</p>
@@ -474,7 +453,6 @@
             Designed & Automated by <a href="https://roofflowai.co.uk/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors underline decoration-white/30 underline-offset-4">RoofflowAI</a>
         </p>
     </footer>
-
     <!-- Lightbox (Galeria) -->
     <div id="lightbox" class="fixed inset-0 z-[100] bg-charcoal/95 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
         <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gold transition-colors z-50">
@@ -484,16 +462,14 @@
             <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
         </div>
     </div>
-
     <!-- Scripts -->
     <script>
         lucide.createIcons();
-
         // Lightbox Logic
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
-        
+
         function openLightbox(src) {
             lightboxImg.src = src;
             lightbox.classList.remove('opacity-0', 'pointer-events-none');
@@ -503,7 +479,6 @@
             }, 50);
             document.body.style.overflow = 'hidden';
         }
-
         function closeLightbox() {
             lightbox.classList.add('opacity-0', 'pointer-events-none');
             lightboxImg.classList.remove('scale-100');
@@ -513,26 +488,22 @@
             }, 300);
             document.body.style.overflow = '';
         }
-
         document.querySelectorAll('.gsap-gallery-item').forEach(item => {
             item.addEventListener('click', (e) => {
                 const img = item.querySelector('img');
                 if (img) openLightbox(img.src);
             });
         });
-
         lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target !== lightboxImg) closeLightbox();
         });
-
         // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = mobileMenuBtn.querySelector('i');
         const mobileLinks = document.querySelectorAll('.mobile-link');
         let isMenuOpen = false;
-
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
             if (isMenuOpen) {
@@ -548,25 +519,22 @@
             }
             lucide.createIcons();
         }
-
         mobileMenuBtn.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if(isMenuOpen) toggleMenu();
             });
         });
-
         // Form Webhook Logic with Fallback for Enquiries
         document.getElementById('availability-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerText;
-            
+
             submitBtn.innerText = 'Checking...';
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
-
             const payload = {
                 name: document.getElementById('clientName').value,
                 email: document.getElementById('clientEmail').value,
@@ -579,30 +547,28 @@
                 hasInspirationImage: document.getElementById('inspirationImage').files.length > 0,
                 submittedAt: new Date().toISOString()
             };
-
             try {
                 const response = await fetch('https://primary-production-58a3.up.railway.app/webhook/22778059-d7fa-4a84-8bbd-8e4050503c7a', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-
                 if (response.ok) {
                     submitBtn.innerText = 'Availability Request Sent!';
                     submitBtn.classList.replace('bg-charcoal', 'bg-green-600');
                     submitBtn.classList.replace('hover:bg-gold', 'hover:bg-green-700');
-                    e.target.reset(); 
+                    e.target.reset();
                 } else {
                     throw new Error(`Server error: ${response.status}`);
                 }
             } catch (error) {
                 console.error('Webhook Error / Fallback triggered:', error);
-                
+
                 submitBtn.innerText = 'Redirecting to WhatsApp...';
                 submitBtn.classList.replace('bg-charcoal', 'bg-purple');
-                
-                const kasiaPhone = "447427669677"; 
-                
+
+                const kasiaPhone = "447427669677";
+
                 let waMessage = `Hi Kasia! I'm checking availability for a cake order:%0A%0A`;
                 waMessage += `*Name:* ${payload.name}%0A`;
                 waMessage += `*Date:* ${payload.eventDate}%0A`;
@@ -613,9 +579,9 @@
                 if(payload.hasInspirationImage) {
                     waMessage += `(I have an inspiration image to share!)`;
                 }
-                
+
                 const waUrl = `https://wa.me/${kasiaPhone}?text=${waMessage}`;
-                
+
                 setTimeout(() => {
                     window.open(waUrl, '_blank');
                     submitBtn.innerText = 'Sent via WhatsApp';
@@ -626,20 +592,18 @@
                 }, 1500);
             }
         });
-
         // GSAP Animations
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
-
             window.addEventListener("scroll", () => {
                 const nav = document.getElementById("navbar");
                 const brandText = document.getElementById("brand-text");
-                
+
                 if (window.scrollY > 50) {
                     nav.classList.add("bg-white/95", "backdrop-blur-md", "shadow-sm");
                     nav.classList.remove("py-4", "md:py-6");
                     nav.classList.add("py-2");
-                    
+
                     if(brandText) {
                         brandText.classList.remove("text-2xl", "md:text-3xl");
                         brandText.classList.add("text-xl", "md:text-2xl");
@@ -648,28 +612,23 @@
                     nav.classList.remove("bg-white/95", "backdrop-blur-md", "shadow-sm");
                     nav.classList.add("py-4", "md:py-6");
                     nav.classList.remove("py-2");
-                    
+
                     if(brandText) {
                         brandText.classList.remove("text-xl", "md:text-2xl");
                         brandText.classList.add("text-2xl", "md:text-3xl");
                     }
                 }
             });
-
             const isMobile = window.innerWidth < 768;
-
             const heroTimeline = gsap.timeline();
             heroTimeline.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" });
             heroTimeline.from(".hero-img", { scale: 1.1, opacity: 0, duration: 1.2, ease: "power2.out" }, "-=1");
-
             gsap.utils.toArray('.gsap-fade-in').forEach(element => {
                 gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" }, y: 50, opacity: 0, duration: 0.8, ease: "power2.out" });
             });
-
             gsap.utils.toArray('.gsap-fade-up').forEach(element => {
                 gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%" }, y: 30, opacity: 0, duration: 0.6, ease: "power2.out" });
             });
-
             gsap.from('.gsap-gallery-item', { scrollTrigger: { trigger: "#gallery", start: "top 75%" }, y: 50, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.2, ease: "power2.out" });
             gsap.from('.gsap-stagger-item', { scrollTrigger: { trigger: "#trust", start: "top 75%" }, y: 30, opacity: 0, duration: 0.6, stagger: isMobile ? 0 : 0.15, ease: "power2.out" });
         });
